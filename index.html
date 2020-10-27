@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<title> MODE Collaboration Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #black;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+    background-attachment: fixed;
+    background-position: center;
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url("MODE.PNG");
+    min-height: 100%;
+}
+
+/* Second image (Research) */
+.bgimg-2 {
+    background-image: url("back.JPG");
+    min-height: 400px;
+}
+
+/* Third image (cms) */
+.bgimg-3 {
+    background-image: url("cmsdetector2.jpg");
+    min-height: 400px;
+
+/* image (ml) */
+.bgimg-4 {
+    background-image: url("back.jpg");
+    min-height: 400px;
+
+/*  image (contact) */
+.bgimg-5 {
+    background-image: url("cmsdetector2.jpg");
+    min-height: 400px;
+
+
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+        background-attachment: scroll;
+    }
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#news" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> NEWS</a>
+    <a href="#collaboration" class="w3-bar-item w3-button"><i class="fa fa-user"></i> COLLABORATION</a>
+    <a href="#papers" class="w3-bar-item w3-button"><i class="fa fa-user"></i> PUBLICATIONS</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="https://www.twitter.com/MODECollaborat1" class="w3-bar-item w3-button"> MODE@TWITTER</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+     <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><br><br><br><br><br><br><br>
+ Machine-learning Optimized Design of Experiments</span><br>
+
+</div>
+</div>
+
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT</h3>
+
+MODE (for Machine-learning Optimized Design of Experiments) is a nascent collaboration of physicists and computer scientists who target the use of differentiable programming in design optimization of detectors for particle physics applications, extending from fundamental research at accelerators, in space, and in nuclear physics and neutrino facilities, to industrial applications employing the technology of radiation detection.<br>
+
+We aim to develop a modular, customizable, and scalable, fully differentiable pipeline for the end-to-end optimization of articulated objective functions that model in full the true goals of experimental particle physics endeavours, to ensure optimal detector performance, analysis potential, and cost-effectiveness. <br><br>
+
+The main goal of our activities is to develop an architecture that can be adapted to the above use cases but will also be customizable to any other experimental endeavour employing particle detection at its core. We welcome suggestions, as well as interest in joining our effort, by researchers focusing on use cases for which this technology can be of benefit.<br><br>
+
+The above program has been submitted in a concise form as an <a href="http://www.pd.infn.it/%7Edorigo/eoi_jenas.pdf">expression of interest</a> to the <a href="http://nupecc.org/jenaa/?display=eois">JENAA group</a>.
+
+</div>
+
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">News</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="news">
+  <h3 class="w3-center">NEWS</h3>
+<br>
+<ul>
+<li> Oct. 16: at 4PM there will be a kick-off meeting of the MODE collaboration.
+<li> Sep. 8: If you are interested in attending to a workshop on "Differentiable Programming
+for Design Optimization", which will take place in Louvain-la-Neuve next January, please fill the doodle poll <a href="https://doodle.com/poll/vrsavayx2eq92q9h">at this link</a> to determine the preferred date. 
+<li> Sep. 6: An open kick-off meeting of the <a href="http://nupecc.org/jenaa/?display=eois">JENAA group</a>, where we will discuss ways to obtain support of the community to start our activities, is scheduled for September 15, 2-4PM CET. Feel free to participate!
+The indico page of the meeting <a href="https://indico.cern.ch/event/953923/">is available here</a>.
+</ul>
+
+</div>
+
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">Collaboration</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="collaboration">
+  <h3 class="w3-center">COLLABORATION</h3>
+<br>
+
+The MODE Collaboration includes: <br><br>
+
+At University of Padova Dr. <b>Tommaso Dorigo</b>, Dr. <b>Lukas Layer</b>, Prof. <b>Roberto Rossin</b>, Dr. <b>Giles Strong</b>, Dr. <b>Mia Tosi</b>, Dr. <b>Hevjin Yarar</b> <br>
+At Universite' Catholique de Louvain Dr. <b>Andrea Giammanco</b>, Prof. <b>Christophe Delaere</b>, Dr. <b>Pietro Vischia</b> <br>
+At Universite' Clermont Auvergne, Prof. <b>Julien Donini</b> and Dr. <b>Djamel Boumediene</b><br>
+At the Higher School of Economics of Moscow, Prof. <b>Andrey Ustyuzhanin</b>, Dr. <b>Denis Derkach</b> and Dr. <b>Fedor Ratnikov</b><br><br>
+
+In addition, the following experts in computer science and physics applications of Machine Learning collaborate with MODE:<br>
+
+At CERN Dr. <b>Jan Kieseler</b> <br>
+At University of Oxford Dr. <b>Atilim Gunes Baydin</b><br>
+At New York University Prof. <b>Kyle Cranmer</b><br>
+At Universite' de Liege Prof. <b>Gilles Louppe</b><br>
+
+</div>
+
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">Publications</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="papers">
+  <h3 class="w3-center">PUBLICATIONS</h3>
+<br>
+
+Below is a concise list of relevant publications to the research interests of the MODE collaboration:<br><br>
+
+<ul> 
+<li> <b>A. Gunes Baydin</b>, B.A. Pearlmutter, A.A. Radul, and J.M. Siskind, "Automatic Differentiation in Machine Learning: a Survey", Journal of Machine Learning Research (JMLR) 18 (153) (2018) 1, <a href="http://jmlr.org/papers/v18/17-468.html">http://jmlr.org/papers/v18/17-468.html</a>
+<li> <b>T. Dorigo</b>, "Geometry Optimization of a Muon-Electron Scattering Detector," Physics Open 4 (2020) 100022, arXiv:200200973[physics.ins-det], <a href="http://doi.org/10.1016/j.physo.2020.100022">doi: 10.1016/j.physo.2020.100022</a>.
+<li> <b>T. Dorigo, J. Kieseler, L. Layer and G. Strong</b>, "Muon Energy Measurement from Radiative Losses in a Calorimeter for a Collider Detector", <a href="http://arxiv.org/abs/2008.10958">http://arxiv.org/abs/2008.10958</a> [physics.ins-det] (2020).
+<li> S. Shirobokov, <b>A. Ustyuzhanin, A. Gunes Badyin</b> et al., "Differentiating the Black-Box: Optimization with Local Generative Surrogates", <a href="http://arxiv.org/abs/2002.04632v1">arXiv:2002.04632v1</a> [cs.LG] (2020).
+<li> <b>K. Cranmer</b>, J. Brehmer, and <b>G. Louppe</b>, "The frontier of simulation-based inference", <a href="http://arxiv.org/abs/1911.01429">arXiv:1911.01429</a>[stat.ML] (2019), Proceedings of the National Academy of Sciences.
+<li> <b>F. Ratnikov</b>, "Using machine learning to speed up and improve calorimeter R&D", JINST 15 (2020) C05032, <a href="http://doi.org/10.1088/1748-0221/15/05/C05032">doi: 10.1088/1748-0221/15/05/C05032</a>.
+<li> <b>P. Giubilato</b> et al., "iMPACT: innovative pCT scanner", IEEE Nucl. Science Symposium and Medical Imaging Conference (NSS/MIC) IEEE (2015), <a href="https://ieeexplore.ieee.org/abstract/document/7581240">https://ieeexplore.ieee.org/abstract/document/7581240</a>.
+<li> S. Wuyckens, <b>A. Giammanco</b>, P. Demin, and <b>E. Cortina Gil</b>, "A Portable muon telescope based on small and gas-tight Resistive Plate Chambers"<, Phil. Trans. Royal Soc. A377 (2019) 2137, arXiv:1806.06602v2[physics.ins-det] (2018), <a href="http://doi.org/10.1098/rsta.2018.0139">doi: 10.1098/rsta.2018.0139</a>.
+<li> <b>J. Kieseler</b>, "Object condensation: one-stage grid-free multi-object reconstruction in physics detectors, graph and image data", <a href="http://arxiv.org/abs/2002.03605">arXiv:2002.03605</a>[physics.data-an] (2020).
+<li> P. de Castro Manzano and <b>T. Dorigo</b>, "INFERNO: Inference-Aware Neural Optimization", Comp. Phys. Commun. 244 (2019) 170; Arxiv:1806.04743v2 [stat.ml] (2018), <a href="http://doi.org/10.1016/j.cpc.2019.06.007">doi: 10.1016/j.cpc.2019.06.007</a> .
+<li> J. Brehmer, <b>K. Cranmer</b> et al., "MadMiner: Machine learning-based inference for particle physics", Comput. Softw. Big Sci. 4 (2020) 1, 3, <a href="http://doi.org/10.1007/s41781-020-0035-2">doi: 10.1007/s41781-020-0035-2</a>.
+<li> <b>G. Louppe</b>, J. Hermans, and <b>K. Cranmer</b>, "Adversarial Variational Optimization of Non-Differentiable Simulators", PMLR 89:1438-1447, 2019, <a href="http://arxiv.org/abs/1707.07113">arXiv:1707.07113</a>[stat.ML].
+<li> <b>K. Cranmer</b>, J. Pavez, and <b>G. Louppe</b>, "Approximating Likelihood Ratios with Calibrated Discriminative Classifiers", <a href="http://arxiv.org/abs/1506.02169">arXiv:1506.02169</a>[stat.ML] (2015).
+</ul>
+
+</div>
+
+
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">Contacts</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h3 class="w3-center">CONTACTS</h3>
+        <tr> 
+            <table>
+              <tr> 
+               
+               <td width="100" height="55"><a HREF="mailto:dorigo@pd.infn.it">Send e-mail</a></td>
+               <td width="400">Dr. Tommaso Dorigo<b> </b><br>
+               First Researcher, INFN-Padova<br>
+               Email: <a HREF="mailto:dorigo@pd.infn.it">  dorigo (at) pd (dot) infn (dot) it</a> 
+                      
+              </td>
+
+              </tr>
+              <tr> 
+ 
+                
+
+              </tr>
+              <tr> 
+                <td width="77" height="84">Phone:</td>
+                <td width="300" height="84" valign="top"> 
+                  <p> <br>
+
+                            Office tel.: +39 0499677230  <br> 
+                            Mobile tel.: +39 3666995594 <br>
+                                                
+                </td>
+              </tr>
+              <tr> 
+                <td width="77">Snail mail:</td>
+                <td width="150"> 
+                     <br> Dipartimento di Fisica e Astronomia "G.Galilei" <br>
+                          via Francesco Marzolo 8,
+                          35131 Padova<br>
+                          ITALY <br>
+                </td>
+                </tr>
+              </tr>
+              
+            </table>
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+
+
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <a href="http://www.twitter.com/Dorigo" class="w3-button w3-light-grey"><i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+ 
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
+
