@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<title> MODE Collaboration Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #black;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+    background-attachment: fixed;
+    background-position: center;
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url("https://github.com/mode-collaboration/mode-collaboration.github.io/raw/main/MODE.png");
+    min-height: 100%;
+}
+
+/* Second image (Research) */
+.bgimg-2 {
+    background-image: url("https://github.com/mode-collaboration/mode-collaboration.github.io/raw/main/back.jpeg");
+    min-height: 400px;
+}
+
+/* Third image (cms) */
+.bgimg-3 {
+    background-image: url("https://github.com/mode-collaboration/mode-collaboration.github.io/raw/main/cmsdetector2.jpeg");
+    min-height: 400px;
+
+/* image (ml) */
+.bgimg-4 {
+    background-image: url("https://github.com/mode-collaboration/mode-collaboration.github.io/raw/main/back.jpeg");
+    min-height: 400px;
+
+/*  image (contact) */
+.bgimg-5 {
+    background-image: url("https://github.com/mode-collaboration/mode-collaboration.github.io/raw/main/cmsdetector2.jpeg");
+    min-height: 400px;
+
+
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+        background-attachment: scroll;
+    }
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="../index.html#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="../index.html#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="../index.html#news" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> NEWS</a>
+    <a href="../index.html#collaboration" class="w3-bar-item w3-button"><i class="fa fa-user"></i> COLLABORATION</a>
+    <a href="../index.html#papers" class="w3-bar-item w3-button"><i class="fa fa-user"></i> PUBLICATIONS</a>
+    <a href="../index.html#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="https://www.twitter.com/MODECollaborat1" class="w3-bar-item w3-button"> MODE@TWITTER</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="../index.html#home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+    <a href="../index.html#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="../index.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
+
+
+
+<!-- Container (Workshop Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">First MODE Workshop on Differentiable Programming</h3>
+
+  Welcome to the reference page for the first workshop on Differentiable Programming by the MODE Collaboration.<br/>
+  We envision that such a workshop, with minimally varied title and content, should become a yearly event where we invite scientists active in the research area at the focus of MODE to connect and discuss about their results and plans. For this first event the intent is also organizational, getting the interested parties to know each other and coalesce on focused efforts.<br/><br/>
+
+
+  
+  <h4 class="w3-center">Details</h4>
+  
+  <strong>When:</strong><br/>
+  September 6th--8th, 2021 (pending the evolution of the COVID-19 situation. Please do not book travel or accomodation yet.<br/><br/>
+
+  <strong>Where:</strong><br/>
+  Auditorium Cyclotron 01, CP3, Universit&eacute; catholique de Louvain, Chemin du Cyclotron, 2, B1348 Louvain-la-Neuve, Belgium (<a href="https://goo.gl/maps/qwpBmVebZK3XNvEi7" alt="Google Maps link to CP3">google maps</a>)<br/><br/>
+
+  <font color="red">More organizational details, as well as an indico agenda, will be made available at a later date, when the situation will be more clear.</font>
+
+  <br/><br/>
+  
+  <h4 class="w3-center">Tentative Program</h4>
+
+  <strong>September 6th, afternoon:</strong>
+  <ul>
+    <li>14:00-14:30 Introduction and goals of the workshop (Tommaso Dorigo, INFN-PD)</li>
+    <li>14:30-16:30 Progress in Computer Science (chair: Atilim Gunes Baydin, U. Oxford)
+      <ul>
+        <li>Keynote lecture on deep learning</li>
+        <li>Keynote lecture on differentiable programming applications to design optimization
+        <li>other contributions by CS experts
+      </ul></li>
+    <li>16:30-17:00 break</li>
+    <li>17:00-19:00 Applications in muon tomography and hadron therapy (chair: Andrea Giammanco, UCLouvain)</li>
+  </ul>
+
+  <strong>September 7th, morning:</strong>
+  <ul>
+    <li>08:30-10:30 Applications and requirements for particle physics (chair: Pietro Vischia, UCLouvain)</li>
+    <li>10:30-11:00 break</li>
+    <li>11:00-13:00 Applications and requirements in astro-HEP (chair: Roberto Ruiz de Austri Bazan, IFIC Valencia)</li>
+  </ul>
+  
+  <strong>September 7th, afternoon</strong>
+  <ul>
+    <li>14:30-16:30 Applications and requirements for neutrino detectors (chair: Kazuhiro Terao, Columbia U.)</li>
+    <li>16:30-17:00 break</li>
+    <li>17:00-19:00 Applications and requirements in nuclear physics experiments (chair: Gian Michele Innocenti, CERN)</li>
+  </ul>
+  
+  <strong>September 8th, morning</strong>
+  <ul>
+    <li>08:30-09:30 Round table discussion, formation of working groups</li>
+    <li>09:30-11:00 (Parallel) Specification of tasks and goals of the working groups</li>
+    <li>11:00-11:30 break</li>
+    <li>11:30-13:00 Organization of future activities and closing of the workshop (chair: Tommaso Dorigo, INFN-PD)</li>
+  </ul>
+
+  <br/><br/>
+  
+  <h4 class="w3-center">Organizing Committee</h4>
+
+  <ul>
+    <li>Pietro Vischia (UCLouvain)</li>
+    <li>Tommaso Dorigo (INFN-PD)</li>
+    <li>Andrea Giammanco (UCLouvain)</li>
+    <li>Christophe Delaere (UCLouvain)</li>
+    <li>Giles Strong (INFN-PD)</li>
+    <li>Carinne Mertens (secretariat) (UCLouvain)</li>
+  </ul>
+  
+  <br/><br/>
+  
+  <h4 class="w3-center">Scientific Advisory Committee</h4>
+
+  <ul>
+    <li>Kyle Cranmer (New York U., HEP/ML)</li>
+    <li>Julien Donini (U. Clermont Auvergne, HEP)</li>
+    <li>Andrea Giammanco (U. Cath. Louvain, HEP/Muon Tomography)</li>
+    <li>Atilim Gunes Baydin (Oxford U., CS)</li>
+    <li>Piero Giubilato (U. Padova, hadron therapy)</li>
+    <li>Gian Michele Innocenti (CERN, nuclear physics/ML)</li>
+    <li>Michael Kagan (SLAC, HEP/CS)</li>
+    <li>Riccardo Rando (. Padova, astro-HEP)</li>
+    <li>Roberto Ruiz de Austri Bazan (IFIC Valencia, astro-HEP)</li>
+    <li>Kazuhiro Terao (Columbia U., neutrino/ML)</li>
+    <li>Andrey Ustyuzhanin (Higher School of Economics, Nat. Res. Univ. Moscow, CS)</li>
+    <li>Christoph Weniger (U. Amsterdam, astro-HEP)</li>
+  </ul>
+  
+</div>
+
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">News</span>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.twitter.com/MODECollaborat1" class="w3-button w3-light-grey"><i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+ 
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
+
