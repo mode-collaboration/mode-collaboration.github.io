@@ -13,7 +13,7 @@ abstract: "Offline reinforcement learning (RL) methods can generally be categori
 
 featured: false
 
-publication: "*Advances in Neural Information Processing Systems*"
+publication: "*The Thirty-sixth Conference on Neural Information Processing Systems (NeurIPS 2022) (oral)*"
 
 url_pdf: "https://openreview.net/forum?id=CKbqDtZnSc"
 

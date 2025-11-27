@@ -14,7 +14,7 @@ abstract: Most offline reinforcement learning (RL) methods suffer from the trade
 # Summary. An optional shortened abstract.
 summary: Based on the IVR framework, we further propose two practical algorithms, Sparse Q-learning (SQL) and Exponential Q-learning (EQL), which adopt the same value regularization used in existing works, but in a complete in-sample manner.
 
-publication: "*International Conference on Learning Representations*"
+publication: "*The 11th International Conference on Learning Representations (ICLR 2023) (oral)*"
 
 url_pdf: "https://openreview.net/forum?id=ueYYgo2pSSU"
 
