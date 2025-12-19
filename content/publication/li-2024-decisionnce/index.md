@@ -18,7 +18,7 @@ abstract: "Multimodal pretraining has emerged as an effective strategy for the t
 
 featured: false
 
-publication: "*Forty-first International Conference on Machine Learning (ICML 2024)*"
+publication: "*Forty-first International Conference on Machine Learning (ICML 2024) (Outstanding paper award of ICML 2024 MFM-EAI Workshop)*"
 
 url_pdf: "https://openreview.net/pdf?id=1sesUtOIH5"
 
