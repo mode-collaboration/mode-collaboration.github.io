@@ -18,7 +18,6 @@
       "font",
       "footer",
       "form",
-      "h",
       "h1",
       "h2",
       "h3",
@@ -197,7 +196,6 @@
       "gallery-grid",
       "gallery-item",
       "gallery-item--medium",
-      "gradient-box",
       "grid-sizer",
       "header--fixed",
       "hero-lead",
@@ -347,14 +345,13 @@
       "year-2023",
       "year-2024",
       "year-2025",
-      "zoom-box"
+      "year-2026"
     ],
     "ids": [
       "-click-here-to-become-a-sponsor-and-help-support-hugo-bloxs-future-httpshugobloxcomsponsor",
-      "100s-closed-loop-perfromance-of-diffusion-planner-without-refinement",
       "TableOfContents",
       "callouts",
-      "chart-354819276",
+      "chart-139745862",
       "charts",
       "code",
       "contact",
