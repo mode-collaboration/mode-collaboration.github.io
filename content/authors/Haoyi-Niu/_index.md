@@ -29,9 +29,9 @@ interests:
 
 education:
   courses:
-  # - course: Title course 1
-  #   institution: Tsinghua University
-  #   year: 2012
+  - course: M.S. in Automation
+    institution: Tsinghua University
+    year: 2025
   - course: B.E. in Automation
     institution: Tsinghua University
     year: 2022
@@ -83,7 +83,5 @@ user_groups:
 - Alumni
 ---
 
-Hi! I am currently a master student at Intelligent Transportation Lab, Institute of Systems Engineering, Department of Automation, Tsinghua University. Additionally, I work as a research intern at Institute for AI Industry Research (AIR), Tsinghua University, advised by Prof. Xianyuan Zhan. I got my bachelor’s degree in June 2022 from the Department of Automation, Tsinghua University. 
-
-My research interest broadly lies in advanced data-driven learning theory and algorithms on decision making and optimization, such as reinforcement learning (RL), as well as their promising applications on autonomous driving and robotics. However, over recent years, criticism against RL continues to pour regarding its limited real-world applicability. Specifically, I therefore pay much attention to bridging the complex and intractable sim-to-real gaps that potentially deteriorate RL policies, seeking more practical solutions for real-world deployment. Find more about me at https://t6-thu.github.io/.
+Hi! I am a PhD student at [BAIR](https://bair.berkeley.edu/), UC Berkeley, advised by [Prof. Koushil Sreenath](https://hybrid-robotics.berkeley.edu/koushil/). Prior to that, I worked as a research intern at [AIR-DREAM Lab](https://air-dream.netlify.app/) of [Institute for AI Industry Research (AIR)](https://air.tsinghua.edu.cn/), Tsinghua University, advised by [Prof. Xianyuan Zhan](http://zhanxianyuan.xyz/). I obtained B.S. and M.S. in 2022 and 2025 from the Department of Automation, Tsinghua University. My research interest lies in reinforcement learning and cross-domain policy adaptation (i.e. sim-to-real) for embodied agents. Find more about me at [https://t6-thu.github.io/](https://t6-thu.github.io/).
 {style="text-align: justify;"}
