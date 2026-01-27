@@ -91,6 +91,8 @@ sections:
       title: News
       text: |-
 
+        - **Jan. 2026**: Our four recent papers [“X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model”](./publication/zheng-2025-xvla), [“Dichotomous Diffusion Policy Optimization”](./publication/liang-2026-dipole), [“Sample Efficient Offline RL via T-Symmetry Enforced Latent State-Stitching”](./publication/cheng-2026-tels), and [“Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving”](./publication/li-2026-discrete) have been accepted in ICLR 2026!
+
         - **Oct. 2025**: Our [X-VLA](./publication/zheng-2025-xvla) has won **First Place** in the [AGIBOT World Challenge (Manipulation track) @ IROS 2025](https://agibot-world.com/challenge)!
 
         - **Oct. 2025**: We have released ["X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model"](./publication/zheng-2025-xvla)! A lightweight yet scalable cross-embodiment VLA model that achieve SOTA performance over all mainstream embodied AI benchmarks! Project page available at https://thu-air-dream.github.io/X-VLA/.
@@ -105,19 +107,20 @@ sections:
 
         - **Jan. 2025**: Our three recent papers [“Data Center Cooling System Optimization Using Offline Reinforcement Learning”](./publication/zhan-2025-data/), [“Diffusion-Based Planning for Autonomous Driving with Flexible Guidance”](./publication/zheng-2025-diffusion/), and [“Skill Expansion and Composition in Parameter Space”](./publication/liu-2025-skill/) have been accepted in ICLR 2025!
 
-        - **Dec. 2024**: Our recent paper [“Are Expressive Models Truly Necessary for Offline RL?”](./publication/wang-niu-2024-rsp) has been accepted as an **oral paper** in AAAI 2025!
-
-        - **Sep. 2024**: Our two recent papers [“Instruction-Guided Visual Masking”](./publication/zheng-2024-instructionguided) and [“Diffusion-DICE: In-Sample Diffusion Guidance for Offline Reinforcement Learning”](./publication/mao-2024-diffusiondice) have been accepted in NeurIPS 2024!
-
-        - **Jul. 2024**: Our two recent papers [“DecisionNCE: Embodied Multimodal Representations via Implicit Preference Learning”](./publication/li-2024-decisionnce) and [“Instruction-Guided Visual Masking”](./publication/zheng-2024-instructionguided) have won the **Outstanding Paper Awards** at ICML 2024 Workshop on Multi-modal Foundation Model meets Embodied AI (MFM-EAI).
-
-        - **May. 2024**: Our four recent papers [“DecisionNCE: Embodied Multimodal Representations via Implicit Preference Learning”](./publication/li-2024-decisionnce), [“OMPO: A Unified Framework for Reinforcement Learning under Policy and Dynamics Shifts”](./publication/luo-2024-ompo), [“Offline-Boosted Actor-Critic: Adaptively Blending Optimal Historical Behaviors in Deep Off-Policy RL”](./publication/luo-2024-offlineboosted), [“Seizing Serendipity: Exploiting the Value of Past Success in Off-Policy Actor-Critic”](./publication/ji-2023-seizing) have been accepted in ICML 2024!        
-
-        - **Apr. 2024**: Our recent survey paper [“A Comprehensive Survey of Cross-Domain Policy Transfer for Embodied Agents”](./publication/niu-2024-comprehensive) has been accepted in IJCAI 2024.
-
-        - **Jan. 2024**: Our four recent papers [“Revealing the Mystery of Distribution Correction Estimation via Orthogonal-gradient Update”](./publication/mao-2024-odice/), [“Safe Offline Reinforcement Learning with Feasibility-Guided Diffusion Model”](./publication/zheng-2024-fisor/), [“Query-Policy Misalignment in Preference-Based Reinforcement Learning”](./publication/hu-2023-querypolicy/), and [“OpenChat: Advancing Open-source Language Models with Mixed-Quality Data”](./publication/wang-2023-openchat/) have been accepted in ICLR 2024!
-
         :fire: **We are hiring:** Our team is looking for student interns/postdocs at [AIR](https://air.tsinghua.edu.cn/)! If you are interested in the research directions of **real-world RL/IL, AI alignment/AI safety, embodied AI**, and **decision-making in autonomous driving**, please feel free to contact us!
+
+# - **Dec. 2024**: Our recent paper [“Are Expressive Models Truly Necessary for Offline RL?”](./publication/wang-niu-2024-rsp) has been accepted as an **oral paper** in AAAI 2025!
+
+# - **Sep. 2024**: Our two recent papers [“Instruction-Guided Visual Masking”](./publication/zheng-2024-instructionguided) and [“Diffusion-DICE: In-Sample Diffusion Guidance for Offline Reinforcement Learning”](./publication/mao-2024-diffusiondice) have been accepted in NeurIPS 2024!
+
+# - **Jul. 2024**: Our two recent papers [“DecisionNCE: Embodied Multimodal Representations via Implicit Preference Learning”](./publication/li-2024-decisionnce) and [“Instruction-Guided Visual Masking”](./publication/zheng-2024-instructionguided) have won the **Outstanding Paper Awards** at ICML 2024 Workshop on Multi-modal Foundation Model meets Embodied AI (MFM-EAI).
+
+# - **May. 2024**: Our four recent papers [“DecisionNCE: Embodied Multimodal Representations via Implicit Preference Learning”](./publication/li-2024-decisionnce), [“OMPO: A Unified Framework for Reinforcement Learning under Policy and Dynamics Shifts”](./publication/luo-2024-ompo), [“Offline-Boosted Actor-Critic: Adaptively Blending Optimal Historical Behaviors in Deep Off-Policy RL”](./publication/luo-2024-offlineboosted), [“Seizing Serendipity: Exploiting the Value of Past Success in Off-Policy Actor-Critic”](./publication/ji-2023-seizing) have been accepted in ICML 2024!        
+
+# - **Apr. 2024**: Our recent survey paper [“A Comprehensive Survey of Cross-Domain Policy Transfer for Embodied Agents”](./publication/niu-2024-comprehensive) has been accepted in IJCAI 2024.
+
+# - **Jan. 2024**: Our four recent papers [“Revealing the Mystery of Distribution Correction Estimation via Orthogonal-gradient Update”](./publication/mao-2024-odice/), [“Safe Offline Reinforcement Learning with Feasibility-Guided Diffusion Model”](./publication/zheng-2024-fisor/), [“Query-Policy Misalignment in Preference-Based Reinforcement Learning”](./publication/hu-2023-querypolicy/), and [“OpenChat: Advancing Open-source Language Models with Mixed-Quality Data”](./publication/wang-2023-openchat/) have been accepted in ICLR 2024!
+
 # - **Oct. 2023**: We have released [“Data-Driven Control Library (D2C)”](./project/libs/), which provides an easy-to-use and comprehensive library for real-world data-driven control & decision-making problems! Project page available at https://github.com/AIR-DI/D2C. 
 
 # - **Sep. 2023**: We have released [“OpenChat: Advancing Open-source Language Models with Mixed-Quality Data”](./publication/wang-2023-openchat/), which uses ideas from offline RL to fine-tune open-source large language models! Project page available at https://github.com/imoneoi/openchat.
