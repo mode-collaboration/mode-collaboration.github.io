@@ -5,7 +5,7 @@ authors:
 - Florian Bury
 - Maxime Lagrange
 date: '2025-01-01'
-publishDate: '2026-02-27T15:50:41.137887Z'
+publishDate: '2026-02-27T15:54:05.468789Z'
 publication_types:
 - article-journal
 publication: '*Particles*'
