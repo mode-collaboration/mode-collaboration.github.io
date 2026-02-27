@@ -4,7 +4,7 @@ title: 'AI-assisted design of experiments at the frontiers of computation: metho
 authors:
 - Pietro Vischia
 date: '2025-01-01'
-publishDate: '2026-02-27T14:06:25.179140Z'
+publishDate: '2026-02-27T14:24:45.336869Z'
 publication_types:
 - paper-conference
 publication: '*Proceedings of 42nd International Conference on High Energy Physics
