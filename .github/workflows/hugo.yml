@@ -3,6 +3,7 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: [ main ]
+    # Prevent infinite loop when the bot commits generated publication pages
     paths-ignore:
       - 'content/publication/**'
 
@@ -19,7 +20,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: '0.123.7'   # set to your local Hugo Extended version
+      HUGO_VERSION: '0.123.7' # <-- set to your local Hugo Extended version
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,19 +28,20 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Setup Go (for hugo-blox)
-        uses: actions/setup-go@v5
+      # --- BibTeX -> content/publication (auto) ---
+      - name: Setup Python (for academic importer)
+        uses: actions/setup-python@v5
         with:
-          go-version: '1.22'
+          python-version: '3.12'
 
-      - name: Install hugo-blox CLI
+      - name: Install academic CLI
         run: |
-          go install github.com/HugoBlox/hugo-blox-builder/cmd/hugo-blox@latest
-          echo "$HOME/go/bin" >> $GITHUB_PATH
+          python -m pip install --upgrade pip
+          pip install -U academic
 
       - name: Import publications from BibTeX
         run: |
-          hugo-blox academic import --bibtex publications.bib content/publication
+          academic import publications.bib content/publication/ --compact --overwrite
 
       - name: Commit imported publications (if changed)
         run: |
@@ -53,6 +55,7 @@ jobs:
             git push
           fi
 
+      # --- Build & deploy Hugo site ---
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
