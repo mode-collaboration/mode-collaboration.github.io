@@ -30,7 +30,7 @@ jobs:
       - name: Setup Python (for academic importer)
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.13'
 
       - name: Install academic CLI
         run: |
