@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: MODE Collaboration # Website name
-baseURL: 'https://xxx.github.io/' # Website URL
+baseURL: "https://hamzahanif2210.github.io/mode-demo/" # Website URL
 
 ############################
 ## LANGUAGE
