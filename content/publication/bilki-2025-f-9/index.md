@@ -3,7 +3,7 @@ title: A Multiple Readout Ultra-High Segmentation Detector Concept For Future Co
 authors:
 - Burak Bilki
 date: '2025-01-01'
-publishDate: '2026-02-27T14:32:40.840889Z'
+publishDate: '2026-02-27T15:50:40.932185Z'
 publication_types:
 - article-journal
 publication: '*PoS*'

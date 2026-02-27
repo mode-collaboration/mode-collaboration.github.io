@@ -3,7 +3,7 @@ title: Machine Learning Approach to Shield Optimization at Muon Collider
 authors:
 - Luca Castelli
 date: '2025-01-01'
-publishDate: '2026-02-27T14:32:41.086883Z'
+publishDate: '2026-02-27T15:50:41.176018Z'
 publication_types:
 - article-journal
 publication: '*Particles*'

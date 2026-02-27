@@ -14,7 +14,7 @@ authors:
 - Alexander Shen
 - Luis Recabarren Vergara
 date: '2025-05-01'
-publishDate: '2026-02-27T14:32:41.101498Z'
+publishDate: '2026-02-27T15:50:41.191291Z'
 publication_types:
 - article-journal
 publication: '*Physics Open*'

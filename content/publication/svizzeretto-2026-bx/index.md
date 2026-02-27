@@ -5,7 +5,7 @@ authors:
 - Andrea Svizzeretto
 - Mateusz Bawaj
 date: '2026-01-01'
-publishDate: '2026-02-27T14:32:40.822143Z'
+publishDate: '2026-02-27T15:50:40.912337Z'
 publication_types:
 - article-journal
 publication: '*PoS*'
