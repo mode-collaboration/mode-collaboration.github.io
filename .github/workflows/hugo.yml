@@ -2,11 +2,12 @@ name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+    paths-ignore:
+      - 'content/publication/**'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -18,19 +19,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: '0.123.7'   # <-- match your local hugo version
+      HUGO_VERSION: '0.123.7'   # set to your local Hugo Extended version
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: ${{ env.HUGO_VERSION }}
-          extended: true
 
       - name: Setup Go (for hugo-blox)
         uses: actions/setup-go@v5
@@ -45,6 +40,24 @@ jobs:
       - name: Import publications from BibTeX
         run: |
           hugo-blox academic import --bibtex publications.bib content/publication
+
+      - name: Commit imported publications (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/publication
+          if git diff --cached --quiet; then
+            echo "No publication changes to commit."
+          else
+            git commit -m "Auto-update publications from BibTeX"
+            git push
+          fi
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
 
       - name: Build
         run: hugo --gc --minify
