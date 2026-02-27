@@ -3,7 +3,6 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: [ main ]
-    # Prevent infinite loop when the bot commits generated publication pages
     paths-ignore:
       - 'content/publication/**'
 
@@ -20,7 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: '0.123.7' # <-- set to your local Hugo Extended version
+      HUGO_VERSION: '0.123.7'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,7 +27,6 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      # --- BibTeX -> content/publication (auto) ---
       - name: Setup Python (for academic importer)
         uses: actions/setup-python@v5
         with:
@@ -55,7 +53,6 @@ jobs:
             git push
           fi
 
-      # --- Build & deploy Hugo site ---
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -66,7 +63,7 @@ jobs:
         run: hugo --gc --minify
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
 
