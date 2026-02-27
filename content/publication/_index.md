@@ -2,11 +2,10 @@
 title: Publications
 cms_exclude: true
 
-# View.
 view: citation
 
-# Optional header image (relative to `static/media/` folder).
 banner:
   caption: ''
   image: ''
 ---
+Below is a concise list of relevant publications to the research interests of the MODE Collaboration. MODE members among the authors are indicated in **boldface**:

@@ -1,0 +1,10 @@
+/* Light mode (default) */
+.hero-media img {
+  content: url("/media/mode_logo.svg");
+}
+
+/* Dark mode */
+/* Dark mode logo swap */
+body.dark .hero-media img {
+  content: url("/media/mode_logo_white.svg");
+}

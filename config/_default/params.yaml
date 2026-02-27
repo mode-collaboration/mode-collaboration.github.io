@@ -7,18 +7,18 @@
 appearance:
   mode: system
 #  color: emerald
-  theme_day: Ocean
-  theme_night: Minimal
-  font: Minimal
-  font_size: m
+  theme_day: minimal
+  theme_night: minimal
+  font: native
+  font_size: L
 
 # SEO
 marketing:
   seo:
     site_type: ResearchOrganization
     local_business_type: ''
-    org_name: 'AIR-DREAM Lab'
-    description: 'Welcome to AIR-DREAM (Decision-making Research for Empowered AI Methods) Lab, a research group at Institute for AI Industry Research (AIR), Tsinghua University.'
+    org_name: 'MODE Collaboration'
+    description: 'Welcome to MODE (for Machine-learning Optimized Design of Experiments) is a collaboration of physicists and computer scientists who target the use of differentiable programming in design optimization of physics experiment.'
     twitter: ''
   analytics:
     google_analytics: 'G-NL9F8GHZ5L'
@@ -48,7 +48,7 @@ header:
 # Site footer
 footer:
   copyright:
-    notice: '© {year} - AIR-DREAM Lab.'
+    notice: '© {year} - MODE-Collaboration.'
     license:
       enable: false
       allow_derivatives: false
@@ -114,3 +114,6 @@ extensions:
 security:
   # Allow frame for embedding speaker notes in slides
   allow_frame: true
+
+custom_js:
+  - people-tabs.js

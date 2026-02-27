@@ -11,3 +11,4 @@ go.sum
 .hugo_build.lock
 .gitmodules
 tmp/
+hugo_stats.json

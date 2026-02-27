@@ -11,7 +11,7 @@ main:
 #    url: '#posts'
 #    weight: 20
   - name: News
-    url: '/#news'
+    url: 'news'
     weight: 20
   - name: Researches
     url: '/#researches'
@@ -20,11 +20,23 @@ main:
 #    url: '#talks'
 #    weight: 50
   - name: Publications
-    url: '/#featured'
-    weight: 40
+    url: publication
+    weight: 30
   - name: People
-    url: '/#people'
+    url: 'people'
     weight: 60
+  # - name: Gallery
+  #   url: gallery
+  #   weight: 70
+  - name: Events
+    url: events
+    weight: 70
+  - name: Contact
+    url: '/#Contact'
+    weight: 80
+  - name: Follow us on Linkedin
+    url: 'https://www.linkedin.com/company/mode-collaboration/'
+    weight: 80
 #  - name: Contact
 #    url: '#contact'
 #    weight: 60
