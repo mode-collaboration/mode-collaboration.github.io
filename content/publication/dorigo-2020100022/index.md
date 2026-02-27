@@ -3,7 +3,7 @@ title: Geometry optimization of a muon-electron scattering detector
 authors:
 - Tommaso Dorigo
 date: '2020-01-01'
-publishDate: '2026-02-27T15:54:05.395199Z'
+publishDate: '2026-02-27T15:55:51.333243Z'
 publication_types:
 - article-journal
 publication: '*Physics Open*'

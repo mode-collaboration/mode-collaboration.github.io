@@ -8,7 +8,7 @@ authors:
 - Michael Smolka
 - Maximilian Straub
 date: '2025-01-01'
-publishDate: '2026-02-27T15:54:05.482039Z'
+publishDate: '2026-02-27T15:55:51.414637Z'
 publication_types:
 - article-journal
 publication: '*Particles*'
