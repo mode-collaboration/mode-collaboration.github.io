@@ -3,6 +3,12 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'publications.bib'
+  workflow_run:
+    workflows: ["Import Publications from BibTeX"]
+    types:
+      - completed
 
 permissions:
   contents: read

@@ -1,0 +1,45 @@
+name: Import Publications from BibTeX
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'publications.bib'
+
+permissions:
+  contents: write
+
+jobs:
+  import-publications:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install academic CLI
+        run: |
+          python -m pip install --upgrade pip
+          pip install -U academic
+
+      - name: Import publications from BibTeX
+        run: |
+          academic import publications.bib content/publication/ --compact --overwrite
+
+      - name: Commit imported publications
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/publication
+          if git diff --cached --quiet; then
+            echo "No publication changes to commit."
+          else
+            git commit -m "Auto-update publications from BibTeX"
+            git push
+          fi
