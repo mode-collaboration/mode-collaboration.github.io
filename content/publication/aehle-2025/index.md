@@ -34,7 +34,7 @@ authors:
 - Giles C. Strong
 - Pietro Vischia
 date: '2025-12-01'
-publishDate: '2026-02-27T14:27:19.741317Z'
+publishDate: '2026-02-27T14:32:40.928508Z'
 publication_types:
 - article-journal
 publication: '*Reviews in Physics*'

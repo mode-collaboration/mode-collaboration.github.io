@@ -10,7 +10,7 @@ authors:
 - Rubén Lorenzo Ortega
 - Roberto Gómez-Espinosa Martín
 date: '2025-01-01'
-publishDate: '2026-02-27T14:27:19.908416Z'
+publishDate: '2026-02-27T14:32:41.093668Z'
 publication_types:
 - article-journal
 publication: '*Particles*'
