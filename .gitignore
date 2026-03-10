@@ -1,7 +1,7 @@
 # IDEs
 .idea/
 *~
-
+env.example
 # Hugo
 resources/
 public/
