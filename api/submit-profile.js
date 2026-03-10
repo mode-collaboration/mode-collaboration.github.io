@@ -101,9 +101,19 @@ async function createOrUpdateFile({ path, contentBase64, branch, message }) {
 }
 
 module.exports = async function handler(req, res) {
+  const allowedOrigin = 'https://mode-demo.github.io';
+
+  res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   try {
     if (req.method !== 'POST') {
-      res.setHeader('Allow', 'POST');
+      res.setHeader('Allow', 'POST, OPTIONS');
       return json(res, 405, { error: 'Method not allowed. Use POST.' });
     }
 

@@ -82,10 +82,13 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
           });
+          let data = {};
+          try {
+            data = await response.json();
+          } catch (_err) {}
 
-          const data = await response.json().catch(() => ({}));
           if (!response.ok) {
-            throw new Error(data.error || 'Submission failed.');
+            throw new Error(data.error || `Submission failed (${response.status}).`);
           }
 
           setStatus(`Success! Draft PR created: ${data.prUrl}`, 'success');
