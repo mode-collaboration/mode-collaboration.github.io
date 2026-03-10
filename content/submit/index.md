@@ -83,7 +83,7 @@ type: landing
         avatarMimeType: avatarFile.type
       };
 
-      const response = await fetch('/.netlify/functions/submit-profile', {
+      const response = await fetch('https://mode-demo-github-io.vercel.app/api/submit-profile', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

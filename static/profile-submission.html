@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Submission</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 720px; padding: 0 1rem; }
+      form { display: grid; gap: 0.9rem; }
+      label { font-weight: 600; display: grid; gap: 0.35rem; }
+      input, textarea, button { font: inherit; padding: 0.6rem; }
+      textarea { min-height: 100px; }
+      button { cursor: pointer; }
+      .hint { font-size: 0.9rem; color: #555; }
+      .error { color: #b10000; font-weight: 600; }
+      .success { color: #0b6400; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <h1>Submit Your Profile</h1>
+    <p class="hint">Fill out the form below. A maintainer will review your draft pull request manually.</p>
+
+    <form id="profile-form">
+      <label>Name* <input id="name" name="name" required maxlength="100" /></label>
+      <label>Role* <input id="role" name="role" required maxlength="120" /></label>
+      <label>Affiliation* <input id="affiliation" name="affiliation" required maxlength="160" /></label>
+      <label>Bio* <textarea id="bio" name="bio" required maxlength="2000"></textarea></label>
+      <label>Email* <input id="email" name="email" type="email" required maxlength="160" /></label>
+      <label>Social links (one per line) <textarea id="socialLinks" name="socialLinks" placeholder="https://github.com/yourname"></textarea></label>
+      <label>Profile image* <input id="image" name="image" type="file" accept="image/*" required /></label>
+      <label>Access key* <input id="accessKey" name="accessKey" type="password" required /></label>
+      <button type="submit">Submit profile</button>
+    </form>
+
+    <p id="status" aria-live="polite"></p>
+
+    <script>
+      const form = document.getElementById('profile-form');
+      const statusEl = document.getElementById('status');
+
+      function setStatus(message, type = '') {
+        statusEl.className = type;
+        statusEl.textContent = message;
+      }
+
+      function fileToDataUrl(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = () => reject(new Error('Failed to read image file.'));
+          reader.readAsDataURL(file);
+        });
+      }
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        setStatus('Submitting...');
+
+        try {
+          const imageFile = document.getElementById('image').files[0];
+          if (!imageFile) throw new Error('Please upload an image.');
+          if (imageFile.size > 5 * 1024 * 1024) throw new Error('Image must be <= 5MB.');
+
+          const payload = {
+            name: document.getElementById('name').value.trim(),
+            role: document.getElementById('role').value.trim(),
+            affiliation: document.getElementById('affiliation').value.trim(),
+            bio: document.getElementById('bio').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            socialLinks: document.getElementById('socialLinks').value,
+            accessKey: document.getElementById('accessKey').value,
+            imageName: imageFile.name,
+            imageDataUrl: await fileToDataUrl(imageFile),
+          };
+
+          if (!payload.name || !payload.role || !payload.affiliation || !payload.bio || !payload.email || !payload.accessKey) {
+            throw new Error('Please fill all required fields.');
+          }
+
+          const response = await fetch('/api/submit-profile', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            throw new Error(data.error || 'Submission failed.');
+          }
+
+          setStatus(`Success! Draft PR created: ${data.prUrl}`, 'success');
+          form.reset();
+        } catch (error) {
+          setStatus(error.message || 'Something went wrong.', 'error');
+        }
+      });
+    </script>
+  </body>
+</html>
