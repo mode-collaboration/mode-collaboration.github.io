@@ -70,113 +70,12 @@
         z-index: 1;
       }
 
-      /* Tabs for mode switching */
-      .mode-tabs {
-        display: flex;
-        gap: 0;
-        background: var(--card);
-        border-radius: var(--radius) var(--radius) 0 0;
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-      .mode-tab {
-        flex: 1;
-        padding: 1rem;
-        text-align: center;
-        font-weight: 600;
-        font-size: 0.95rem;
-        cursor: pointer;
-        border: none;
-        background: transparent;
-        color: var(--text-muted);
-        transition: var(--transition);
-        position: relative;
-        font-family: inherit;
-      }
-      .mode-tab:hover { color: var(--primary); background: rgba(21,101,192,0.04); }
-      .mode-tab.active {
-        color: var(--primary);
-        background: rgba(21,101,192,0.06);
-      }
-      .mode-tab.active::after {
-        content: '';
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        height: 3px;
-        background: var(--primary);
-        border-radius: 3px 3px 0 0;
-      }
-      .mode-tab .tab-icon { font-size: 1.3rem; display: block; margin-bottom: 0.2rem; }
-
       /* Card form wrapper */
       .form-card {
         background: var(--card);
-        border-radius: 0 0 var(--radius) var(--radius);
+        border-radius: var(--radius);
         box-shadow: var(--shadow);
         padding: 2rem 2.25rem 2.5rem;
-      }
-
-      /* Auto-fetch section */
-      .auto-fetch-section {
-        display: none;
-        text-align: center;
-        padding: 1rem 0 0.5rem;
-      }
-      .auto-fetch-section.active { display: block; }
-      .auto-fetch-section p {
-        color: var(--text-muted);
-        font-size: 0.92rem;
-        margin-bottom: 1.25rem;
-      }
-      .url-input-group {
-        display: flex;
-        gap: 0.75rem;
-        max-width: 580px;
-        margin: 0 auto 1rem;
-      }
-      .url-input-group input {
-        flex: 1;
-        padding: 0.75rem 1rem;
-        border: 2px solid var(--border);
-        border-radius: var(--radius);
-        font: inherit;
-        font-size: 0.95rem;
-        transition: var(--transition);
-      }
-      .url-input-group input:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(21,101,192,0.12);
-      }
-      .btn-fetch {
-        padding: 0.75rem 1.5rem;
-        background: var(--accent);
-        color: #fff;
-        border: none;
-        border-radius: var(--radius);
-        font: inherit;
-        font-weight: 600;
-        cursor: pointer;
-        white-space: nowrap;
-        transition: var(--transition);
-      }
-      .btn-fetch:hover { filter: brightness(1.1); transform: translateY(-1px); }
-      .btn-fetch:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-      .fetch-status { font-size: 0.9rem; min-height: 1.5rem; }
-
-      .divider {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin: 1.5rem 0;
-        color: var(--text-muted);
-        font-size: 0.85rem;
-      }
-      .divider::before, .divider::after {
-        content: '';
-        flex: 1;
-        height: 1px;
-        background: var(--border);
       }
 
       /* Sections */
@@ -467,29 +366,7 @@
     </div>
 
     <div class="container">
-      <!-- Mode tabs -->
-      <div class="mode-tabs">
-        <button class="mode-tab active" data-mode="manual" type="button">
-          <span class="tab-icon">&#9997;</span>
-          Manual Entry
-        </button>
-        <button class="mode-tab" data-mode="auto" type="button">
-          <span class="tab-icon">&#10530;</span>
-          Auto-Capture from URL
-        </button>
-      </div>
-
       <div class="form-card">
-        <!-- Auto-fetch panel -->
-        <div id="auto-fetch" class="auto-fetch-section">
-          <p>Paste a link to an existing Hugo Blox / Academic profile page and we'll try to extract the details for you. You can review and edit everything before submitting.</p>
-          <div class="url-input-group">
-            <input type="url" id="profile-url" placeholder="https://example.com/authors/your-name/" />
-            <button class="btn-fetch" id="btn-fetch" type="button">Fetch Profile</button>
-          </div>
-          <p id="fetch-status" class="fetch-status"></p>
-          <div class="divider">Then review &amp; edit the fields below</div>
-        </div>
 
         <form id="profile-form">
           <!-- Required info -->
@@ -529,11 +406,6 @@
           <label>
             Short Bio *
             <textarea id="bio" name="bio" required maxlength="2000" placeholder="Write a brief biography..."></textarea>
-          </label>
-
-          <label>
-            Email *
-            <input id="email" name="email" type="email" required maxlength="160" placeholder="jane.doe@example.com" />
           </label>
 
           <!-- Profile image -->
@@ -581,11 +453,11 @@
             <button type="button" class="btn-add" id="add-education">+ Add education</button>
           </div>
 
-          <div class="section-title collapsible-toggle" id="toggle-social">
+          <div class="section-title collapsible-toggle open" id="toggle-social">
             Social &amp; Academic Links <span class="optional">(optional)</span>
             <span class="chevron">&#9660;</span>
           </div>
-          <div class="collapsible-content" id="section-social">
+          <div class="collapsible-content open" id="section-social">
             <div class="dynamic-list" id="social-list">
               <div class="social-row dynamic-list-item">
                 <select name="social-type">
@@ -626,16 +498,6 @@
     <div class="page-footer">MODE Collaboration &mdash; Profile Submission</div>
 
     <script>
-      /* ---- Tab switching ---- */
-      document.querySelectorAll('.mode-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          const autoSection = document.getElementById('auto-fetch');
-          autoSection.classList.toggle('active', tab.dataset.mode === 'auto');
-        });
-      });
-
       /* ---- Collapsible sections ---- */
       document.querySelectorAll('.collapsible-toggle').forEach(toggle => {
         toggle.addEventListener('click', () => {
@@ -740,91 +602,6 @@
         })).filter(s => s.link);
       }
 
-      /* ---- Auto-fetch from URL ---- */
-      const fetchBtn = document.getElementById('btn-fetch');
-      const fetchStatus = document.getElementById('fetch-status');
-
-      fetchBtn.addEventListener('click', async () => {
-        const url = document.getElementById('profile-url').value.trim();
-        if (!url) { fetchStatus.textContent = 'Please enter a URL.'; fetchStatus.style.color = 'var(--error)'; return; }
-        fetchBtn.disabled = true;
-        fetchBtn.textContent = 'Fetching...';
-        fetchStatus.textContent = '';
-        fetchStatus.style.color = '';
-
-        try {
-          const resp = await fetch('https://mode-demo-github-io.vercel.app/api/fetch-profile?url=' + encodeURIComponent(url));
-          const data = await resp.json();
-          if (!resp.ok) throw new Error(data.error || 'Fetch failed');
-
-          // Populate form fields from fetched data
-          if (data.name) document.getElementById('name').value = data.name;
-          if (data.role) {
-            const roleSelect = document.getElementById('role');
-            const opt = [...roleSelect.options].find(o => o.value === data.role);
-            if (opt) roleSelect.value = data.role;
-          }
-          if (data.affiliation) document.getElementById('affiliation').value = data.affiliation;
-          if (data.orgUrl) document.getElementById('org-url').value = data.orgUrl;
-          if (data.bio) document.getElementById('bio').value = data.bio;
-          if (data.email) document.getElementById('email').value = data.email;
-
-          // Populate interests
-          if (data.interests && data.interests.length) {
-            const list = document.getElementById('interests-list');
-            list.innerHTML = '';
-            data.interests.forEach(interest => {
-              const item = document.createElement('div');
-              item.className = 'dynamic-list-item';
-              item.innerHTML = `<input type="text" name="interest" placeholder="e.g. Machine Learning" maxlength="120" value="${interest.replace(/"/g, '&quot;')}" /><button type="button" class="btn-remove" title="Remove">&times;</button>`;
-              list.appendChild(item);
-              addRemoveHandler(item.querySelector('.btn-remove'));
-            });
-            document.getElementById('toggle-interests').classList.add('open');
-            document.getElementById('section-interests').classList.add('open');
-          }
-
-          // Populate education
-          if (data.education && data.education.length) {
-            const list = document.getElementById('education-list');
-            list.innerHTML = '';
-            data.education.forEach(edu => {
-              const item = document.createElement('div');
-              item.className = 'edu-row dynamic-list-item';
-              item.innerHTML = `<input type="text" name="edu-course" placeholder="e.g. PhD Physics" maxlength="160" value="${(edu.course||'').replace(/"/g,'&quot;')}" /><div class="edu-row-inner"><input type="text" name="edu-institution" placeholder="Institution" maxlength="160" value="${(edu.institution||'').replace(/"/g,'&quot;')}" /><input type="text" name="edu-year" placeholder="Year" maxlength="4" style="max-width:80px" value="${edu.year||''}" /></div><button type="button" class="btn-remove" title="Remove">&times;</button>`;
-              list.appendChild(item);
-              addRemoveHandler(item.querySelector('.btn-remove'));
-            });
-            document.getElementById('toggle-education').classList.add('open');
-            document.getElementById('section-education').classList.add('open');
-          }
-
-          // Populate social links
-          if (data.social && data.social.length) {
-            const list = document.getElementById('social-list');
-            list.innerHTML = '';
-            data.social.forEach(s => {
-              const item = document.createElement('div');
-              item.className = 'social-row dynamic-list-item';
-              item.innerHTML = `<select name="social-type"><option value="envelope"${s.icon==='envelope'?' selected':''}>Email</option><option value="link"${s.icon==='link'?' selected':''}>Website</option><option value="x-twitter"${s.icon==='x-twitter'?' selected':''}>X / Twitter</option><option value="github"${s.icon==='github'?' selected':''}>GitHub</option><option value="google-scholar"${s.icon==='google-scholar'?' selected':''}>Google Scholar</option><option value="orcid"${s.icon==='orcid'?' selected':''}>ORCID</option><option value="researchgate"${s.icon==='researchgate'?' selected':''}>ResearchGate</option><option value="linkedin"${s.icon==='linkedin'?' selected':''}>LinkedIn</option></select><input type="url" name="social-link" placeholder="https://..." maxlength="300" value="${s.link.replace(/"/g,'&quot;')}" /><button type="button" class="btn-remove" title="Remove">&times;</button>`;
-              list.appendChild(item);
-              addRemoveHandler(item.querySelector('.btn-remove'));
-            });
-            document.getElementById('toggle-social').classList.add('open');
-            document.getElementById('section-social').classList.add('open');
-          }
-
-          fetchStatus.textContent = 'Profile data loaded! Review the fields below and fill in anything missing.';
-          fetchStatus.style.color = 'var(--success)';
-        } catch (err) {
-          fetchStatus.textContent = err.message || 'Could not fetch profile data.';
-          fetchStatus.style.color = 'var(--error)';
-        } finally {
-          fetchBtn.disabled = false;
-          fetchBtn.textContent = 'Fetch Profile';
-        }
-      });
-
       /* ---- Form submission ---- */
       const form = document.getElementById('profile-form');
       const statusEl = document.getElementById('status');
@@ -868,7 +645,6 @@
             affiliation: document.getElementById('affiliation').value.trim(),
             orgUrl: document.getElementById('org-url').value.trim(),
             bio: document.getElementById('bio').value.trim(),
-            email: document.getElementById('email').value.trim(),
             interests: getInterests(),
             education: getEducation(),
             socialLinks: getSocialLinks(),
@@ -877,7 +653,7 @@
             imageDataUrl: await fileToDataUrl(imageFile),
           };
 
-          if (!payload.name || !payload.role || !payload.affiliation || !payload.bio || !payload.email || !payload.accessKey) {
+          if (!payload.name || !payload.role || !payload.affiliation || !payload.bio || !payload.accessKey) {
             throw new Error('Please fill all required fields.');
           }
 
