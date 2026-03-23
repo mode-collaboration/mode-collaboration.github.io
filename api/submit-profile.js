@@ -47,12 +47,10 @@ function parseDataUrl(dataUrl) {
 // Map role names to role_rank values used by the Hugo Blox people block
 const ROLE_RANKS = {
   'Principal Investigator/Professor': 1,
-  'Secretary': 1,
   'Affiliated Researcher': 2,
   'PhD Candidate': 3,
-  'Master Student': 4,
-  'BSc Student': 5,
-  'Collaborator': 6,
+  'Collaborator': 4,
+  'B.Sc/Master': 5,
 };
 
 // Map social icon names to icon_pack values
