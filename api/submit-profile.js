@@ -71,7 +71,7 @@ function esc(str) {
   return (str || '').replace(/"/g, '\\"');
 }
 
-function buildMarkdown({ name, role, affiliation, orgUrl, bio, email, interests, education, socialLinks, imagePath }) {
+function buildMarkdown({ name, role, affiliation, orgUrl, bio, interests, education, socialLinks, imagePath }) {
   const slug = slugify(name);
   const roleRank = ROLE_RANKS[role] || 6;
 
@@ -219,7 +219,7 @@ module.exports = async function handler(req, res) {
       imageDataUrl,
     } = body || {};
 
-    if (!name || !role || !affiliation || !bio || !accessKey || !imageDataUrl) {
+    if (!name || !role || !accessKey) {
       return json(res, 400, { error: 'Missing required fields.' });
     }
 
@@ -232,8 +232,12 @@ module.exports = async function handler(req, res) {
       return json(res, 400, { error: 'Name produced an invalid slug.' });
     }
 
-    const { extension, base64Body } = parseDataUrl(imageDataUrl);
-    const imagePath = `${process.env.BASE_DIRECTORY}/members_pics/${slug}.${extension}`;
+    let imagePath = '';
+    let extension, base64Body;
+    if (imageDataUrl) {
+      ({ extension, base64Body } = parseDataUrl(imageDataUrl));
+      imagePath = `${process.env.BASE_DIRECTORY}/members_pics/${slug}.${extension}`;
+    }
     const markdownPath = `${process.env.BASE_DIRECTORY}/members/${slug}.md`;
 
     const markdown = buildMarkdown({
@@ -242,7 +246,6 @@ module.exports = async function handler(req, res) {
       affiliation,
       orgUrl,
       bio,
-      email,
       interests,
       education,
       socialLinks,
@@ -265,12 +268,14 @@ module.exports = async function handler(req, res) {
       },
     });
 
-    await createOrUpdateFile({
-      path: imagePath,
-      contentBase64: base64Body,
-      branch: branchName,
-      message: `Add member image: ${name}`,
-    });
+    if (imageDataUrl) {
+      await createOrUpdateFile({
+        path: imagePath,
+        contentBase64: base64Body,
+        branch: branchName,
+        message: `Add member image: ${name}`,
+      });
+    }
 
     await createOrUpdateFile({
       path: markdownPath,
