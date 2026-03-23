@@ -376,6 +376,7 @@
             <label>
               Full Name *
               <input id="name" name="name" required maxlength="100" placeholder="Jane Doe" />
+              <span class="hint">Please write your full name as it appears on arXiv.</span>
             </label>
             <label>
               Role *
@@ -394,8 +395,8 @@
 
           <div class="form-row">
             <label>
-              Organization / Affiliation *
-              <input id="affiliation" name="affiliation" required maxlength="160" placeholder="University of Example" />
+              Organization / Affiliation <span class="optional">(optional)</span>
+              <input id="affiliation" name="affiliation" maxlength="160" placeholder="University of Example" />
             </label>
             <label>
               Organization URL <span class="optional">(optional)</span>
@@ -404,8 +405,8 @@
           </div>
 
           <label>
-            Short Bio *
-            <textarea id="bio" name="bio" required maxlength="2000" placeholder="Write a brief biography..."></textarea>
+            Short Bio <span class="optional">(optional, Markdown compatible)</span>
+            <textarea id="bio" name="bio" maxlength="2000" placeholder="Write a brief biography..."></textarea>
           </label>
 
           <!-- Profile image -->
@@ -417,7 +418,7 @@
             <div class="upload-text" style="font-size:0.8rem;">JPG, PNG, GIF, or WebP &bull; Max 5 MB</div>
             <img class="image-preview" id="image-preview" alt="Preview" />
             <div class="image-file-name" id="image-file-name"></div>
-            <input id="image" name="image" type="file" accept="image/*" required />
+            <input id="image" name="image" type="file" accept="image/*" />
           </div>
 
           <!-- Optional Hugo Blox fields -->
@@ -636,8 +637,7 @@
 
         try {
           const imageFile = document.getElementById('image').files[0];
-          if (!imageFile) throw new Error('Please upload a profile image.');
-          if (imageFile.size > 5 * 1024 * 1024) throw new Error('Image must be 5 MB or smaller.');
+          if (imageFile && imageFile.size > 5 * 1024 * 1024) throw new Error('Image must be 5 MB or smaller.');
 
           const payload = {
             name: document.getElementById('name').value.trim(),
@@ -649,11 +649,11 @@
             education: getEducation(),
             socialLinks: getSocialLinks(),
             accessKey: document.getElementById('accessKey').value,
-            imageName: imageFile.name,
-            imageDataUrl: await fileToDataUrl(imageFile),
+            imageName: imageFile ? imageFile.name : '',
+            imageDataUrl: imageFile ? await fileToDataUrl(imageFile) : '',
           };
 
-          if (!payload.name || !payload.role || !payload.affiliation || !payload.bio || !payload.accessKey) {
+          if (!payload.name || !payload.role || !payload.accessKey) {
             throw new Error('Please fill all required fields.');
           }
 
