@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+  {{ if .Params.active }}
+    <article>
+      <h1 class="text-3xl font-bold mb-4">{{ .Title }}</h1>
+      <div class="text-sm text-gray-500 mb-6">
+        {{ with .Params.organization }}<span class="mr-4"><strong>Organization:</strong> {{ . }}</span>{{ end }}
+        {{ with .Params.location }}<span class="mr-4"><strong>Location:</strong> {{ . }}</span>{{ end }}
+        {{ with .Params.job_type }}<span class="mr-4"><strong>Type:</strong> {{ . }}</span>{{ end }}
+        <span><strong>Posted:</strong> {{ .Date.Format "January 2, 2006" }}</span>
+      </div>
+
+      <div class="prose max-w-none">
+        {{ .Content }}
+      </div>
+
+      {{ with .Params.apply_url }}
+        <div class="mt-8">
+          <a href="{{ . }}" target="_blank" rel="noopener" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold">
+            Apply Now &rarr;
+          </a>
+        </div>
+      {{ end }}
+    </article>
+  {{ else }}
+    <div class="p-8 bg-gray-50 rounded-lg text-center border border-gray-200">
+      <p class="text-xl text-gray-600 mb-4">This opportunity is no longer available.</p>
+      <p class="text-gray-500">
+        Please check the <a href="/opportunities/" class="text-blue-600 hover:underline">opportunities page</a> for current openings,
+        or follow us on
+        <a href="https://www.linkedin.com/groups/12722185/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">LinkedIn</a>
+        to stay updated.
+      </p>
+    </div>
+  {{ end }}
+</div>
+{{ end }}

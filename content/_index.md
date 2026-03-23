@@ -37,16 +37,23 @@ sections:
         If you are interested in information about MODE (including, but not limited to, the announcement of our yearly workshop and the opening of MODE-related PhD/postdoc positions), or if you want to post such advertisement yourself, you can join our <a href="ttps://e-groups.cern.ch/e-groups/Egroup.do?egroupId=10710684">mode-info mailing list </a>!
  
 
-  - block: markdown
+  - block: collection
     id: news
     content:
-      title: News
+      title: Latest News
+      text: ""
+      count: 5
+      filters:
+        folders:
+          - post
+    design:
+      view: compact
+      columns: '1'
+  - block: markdown
+    content:
+      title: ""
       text: |-
-        - **Dec. 2025**: Several new members joined the MODE collaboration. [Check here ](/news/) for more info.
-
-        - **June 2025**: The Fifth MODE Workshop on Differentiable Programming for Experiment Design took place in Crete, Greece. Check the workshop webpage for details.
-
-        For previous news, please visit the [News webpage](/news/).
+        For all news, visit the [News archive](/news/) page.
   - block: collection
     content:
       title: Latest Publications
