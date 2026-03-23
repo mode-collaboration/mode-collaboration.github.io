@@ -1,4 +1,4 @@
-const REQUIRED_ENV = ['GITHUB_TOKEN', 'GITHUB_OWNER', 'GITHUB_REPO', 'FORM_ACCESS_KEY', 'BASE_DIRECTORY'];
+const REQUIRED_ENV = ['GITHUB_TOKEN', 'GITHUB_OWNER', 'GITHUB_REPO', 'FORM_ACCESS_KEY'];
 
 function json(res, statusCode, payload) {
   res.statusCode = statusCode;
@@ -17,6 +17,13 @@ function slugify(input) {
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-');
+}
+
+// Title-case folder name: "Hamza Hanif" -> "Hamza-Hanif"
+function folderName(input) {
+  return input
+    .trim()
+    .replace(/\s+/g, '-');
 }
 
 function parseDataUrl(dataUrl) {
@@ -69,7 +76,7 @@ function esc(str) {
   return (str || '').replace(/"/g, '\\"');
 }
 
-function buildMarkdown({ name, role, affiliation, orgUrl, bio, interests, education, socialLinks, imagePath }) {
+function buildMarkdown({ name, role, affiliation, orgUrl, bio, interests, education, socialLinks }) {
   const slug = slugify(name);
   const roleRank = ROLE_RANKS[role] || 6;
 
@@ -209,7 +216,6 @@ module.exports = async function handler(req, res) {
       affiliation,
       orgUrl,
       bio,
-      email,
       interests,
       education,
       socialLinks,
@@ -226,17 +232,19 @@ module.exports = async function handler(req, res) {
     }
 
     const slug = slugify(name);
-    if (!slug) {
+    const folder = folderName(name);
+    if (!slug || !folder) {
       return json(res, 400, { error: 'Name produced an invalid slug.' });
     }
 
-    let imagePath = '';
-    let extension, base64Body;
+    const authorDir = `content/authors/${folder}`;
+    const markdownPath = `${authorDir}/_index.md`;
+
+    let base64Body;
     if (imageDataUrl) {
-      ({ extension, base64Body } = parseDataUrl(imageDataUrl));
-      imagePath = `${process.env.BASE_DIRECTORY}/members_pics/${slug}.${extension}`;
+      ({ base64Body } = parseDataUrl(imageDataUrl));
     }
-    const markdownPath = `${process.env.BASE_DIRECTORY}/members/${slug}.md`;
+    const imagePath = `${authorDir}/avatar.jpg`;
 
     const markdown = buildMarkdown({
       name,
@@ -247,7 +255,6 @@ module.exports = async function handler(req, res) {
       interests,
       education,
       socialLinks,
-      imagePath,
     });
 
     const repo = await githubRequest(`/repos/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}`);
@@ -266,29 +273,29 @@ module.exports = async function handler(req, res) {
       },
     });
 
+    await createOrUpdateFile({
+      path: markdownPath,
+      contentBase64: Buffer.from(markdown, 'utf8').toString('base64'),
+      branch: branchName,
+      message: `Add/update member profile: ${name}`,
+    });
+
     if (imageDataUrl) {
       await createOrUpdateFile({
         path: imagePath,
         contentBase64: base64Body,
         branch: branchName,
-        message: `Add member image: ${name}`,
+        message: `Add/update member avatar: ${name}`,
       });
     }
-
-    await createOrUpdateFile({
-      path: markdownPath,
-      contentBase64: Buffer.from(markdown, 'utf8').toString('base64'),
-      branch: branchName,
-      message: `Add member profile: ${name}`,
-    });
 
     const pr = await githubRequest(`/repos/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/pulls`, {
       method: 'POST',
       body: {
-        title: `Add member: ${name}`,
+        title: `Add/update member: ${name}`,
         head: branchName,
         base: defaultBranch,
-        body: 'Automated profile submission. Please review and merge manually.',
+        body: `Automated profile submission for **${name}**.\nFolder: \`content/authors/${folder}/\`\n\nPlease review and merge.`,
         draft: true,
       },
     });
