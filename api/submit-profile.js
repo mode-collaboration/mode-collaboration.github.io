@@ -219,7 +219,7 @@ module.exports = async function handler(req, res) {
       imageDataUrl,
     } = body || {};
 
-    if (!name || !role || !affiliation || !bio || !email || !accessKey || !imageDataUrl) {
+    if (!name || !role || !affiliation || !bio || !accessKey || !imageDataUrl) {
       return json(res, 400, { error: 'Missing required fields.' });
     }
 
