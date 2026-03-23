@@ -44,17 +44,95 @@ function parseDataUrl(dataUrl) {
   return { extension, base64Body };
 }
 
-function buildMarkdown({ name, role, affiliation, bio, email, socialLinks, imagePath }) {
-  const cleanLinks = (socialLinks || '')
-    .split(/\r?\n|,/)
-    .map((link) => link.trim())
-    .filter(Boolean);
+// Map role names to role_rank values used by the Hugo Blox people block
+const ROLE_RANKS = {
+  'Principal Investigator/Professor': 1,
+  'Secretary': 1,
+  'Affiliated Researcher': 2,
+  'PhD Candidate': 3,
+  'Master Student': 4,
+  'BSc Student': 5,
+  'Collaborator': 6,
+};
 
-  const linksBlock = cleanLinks.length
-    ? cleanLinks.map((link) => `- ${link}`).join('\n')
-    : '-';
+// Map social icon names to icon_pack values
+const ICON_PACKS = {
+  envelope: 'fas',
+  link: 'fas',
+  'x-twitter': 'fab',
+  github: 'fab',
+  'google-scholar': 'ai',
+  orcid: 'ai',
+  researchgate: 'ai',
+  linkedin: 'fab',
+};
 
-  return `---\nname: "${name.replace(/"/g, '\\"')}"\nrole: "${role.replace(/"/g, '\\"')}"\naffiliation: "${affiliation.replace(/"/g, '\\"')}"\nemail: "${email.replace(/"/g, '\\"')}"\nimage: "${imagePath}"\n---\n\n${bio}\n\n## Social Links\n${linksBlock}\n`;
+function esc(str) {
+  return (str || '').replace(/"/g, '\\"');
+}
+
+function buildMarkdown({ name, role, affiliation, orgUrl, bio, email, interests, education, socialLinks, imagePath }) {
+  const slug = slugify(name);
+  const roleRank = ROLE_RANKS[role] || 6;
+
+  // Build social array (structured for Hugo Blox)
+  let socialYaml = '';
+  const socialItems = Array.isArray(socialLinks) ? socialLinks : [];
+  if (socialItems.length) {
+    socialYaml = 'social:\n' + socialItems.map(s => {
+      const pack = ICON_PACKS[s.icon] || 'fas';
+      const link = s.icon === 'envelope' ? `'mailto:${s.link.replace(/^mailto:/, '')}'` : s.link;
+      return `- icon: ${s.icon}\n  icon_pack: ${pack}\n  link: ${link}`;
+    }).join('\n');
+  } else {
+    socialYaml = 'social: []';
+  }
+
+  // Build interests
+  let interestsYaml = '';
+  const interestItems = Array.isArray(interests) ? interests.filter(Boolean) : [];
+  if (interestItems.length) {
+    interestsYaml = 'interests:\n' + interestItems.map(i => `- ${i}`).join('\n');
+  } else {
+    interestsYaml = 'interests: []';
+  }
+
+  // Build education
+  let educationYaml = '';
+  const eduItems = Array.isArray(education) ? education.filter(e => e.course || e.institution) : [];
+  if (eduItems.length) {
+    educationYaml = 'education:\n  courses:\n' + eduItems.map(e => {
+      let entry = `  - course: ${e.course || ''}`;
+      if (e.institution) entry += `\n    institution: ${e.institution}`;
+      if (e.year) entry += `\n    year: ${e.year}`;
+      return entry;
+    }).join('\n');
+  } else {
+    educationYaml = 'education:\n  courses: []';
+  }
+
+  const frontmatter = [
+    '---',
+    `title: "${esc(name)}"`,
+    'authors:',
+    `- "${slug}"`,
+    'superuser: false',
+    `role: "${esc(role)}"`,
+    `role_rank: ${roleRank}`,
+    'organizations:',
+    `- name: "${esc(affiliation)}"`,
+    `  url: "${esc(orgUrl || '')}"`,
+    `bio: "${esc(bio)}"`,
+    interestsYaml,
+    educationYaml,
+    socialYaml,
+    'highlight_name: true',
+    'user_groups:',
+    `- "${esc(role)}"`,
+    '---',
+  ].join('\n');
+
+  return `${frontmatter}\n\n{style="text-align: justify;"}\n${bio}\n`;
 }
 
 async function githubRequest(path, { method = 'GET', body } = {}) {
@@ -131,8 +209,11 @@ module.exports = async function handler(req, res) {
       name,
       role,
       affiliation,
+      orgUrl,
       bio,
       email,
+      interests,
+      education,
       socialLinks,
       accessKey,
       imageDataUrl,
@@ -159,8 +240,11 @@ module.exports = async function handler(req, res) {
       name,
       role,
       affiliation,
+      orgUrl,
       bio,
       email,
+      interests,
+      education,
       socialLinks,
       imagePath,
     });
