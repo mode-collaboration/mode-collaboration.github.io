@@ -322,26 +322,21 @@
       #status.success { background: #e8f5e9; color: var(--success); border: 1px solid #a5d6a7; }
       #status a { color: inherit; font-weight: 700; }
 
-      /* Collapsible sections */
-      .collapsible-toggle {
-        display: flex;
+      /* Social link labeled rows */
+      .social-labeled-row {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 0.75rem;
         align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        user-select: none;
       }
-      .collapsible-toggle .chevron {
-        transition: var(--transition);
-        font-size: 0.8rem;
-        color: var(--text-muted);
+      .social-labeled-row .social-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text);
       }
-      .collapsible-toggle.open .chevron { transform: rotate(180deg); }
-      .collapsible-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
+      @media (max-width: 600px) {
+        .social-labeled-row { grid-template-columns: 1fr; }
       }
-      .collapsible-content.open { max-height: 2000px; }
 
       /* Animations */
       @keyframes fadeInUp {
@@ -383,12 +378,10 @@
               <select id="role" name="role" required>
                 <option value="">— Select role —</option>
                 <option value="Principal Investigator/Professor">Principal Investigator / Professor</option>
-                <option value="Secretary">Secretary</option>
                 <option value="Affiliated Researcher">Affiliated Researcher</option>
                 <option value="PhD Candidate">PhD Candidate</option>
-                <option value="Master Student">Master Student</option>
-                <option value="BSc Student">BSc Student</option>
                 <option value="Collaborator">Collaborator</option>
+                <option value="B.Sc/Master">B.Sc / Master</option>
               </select>
             </label>
           </div>
@@ -421,61 +414,71 @@
             <input id="image" name="image" type="file" accept="image/*" />
           </div>
 
-          <!-- Optional Hugo Blox fields -->
-          <div class="section-title collapsible-toggle open" id="toggle-interests">
+          <!-- Research Interests -->
+          <div class="section-title">
             Research Interests <span class="optional">(optional)</span>
-            <span class="chevron">&#9660;</span>
           </div>
-          <div class="collapsible-content open" id="section-interests">
-            <div class="dynamic-list" id="interests-list">
-              <div class="dynamic-list-item">
-                <input type="text" name="interest" placeholder="e.g. Machine Learning" maxlength="120" />
-                <button type="button" class="btn-remove" title="Remove">&times;</button>
-              </div>
+          <div class="dynamic-list" id="interests-list">
+            <div class="dynamic-list-item">
+              <input type="text" name="interest" placeholder="e.g. Machine Learning" maxlength="120" />
+              <button type="button" class="btn-remove" title="Remove">&times;</button>
             </div>
-            <button type="button" class="btn-add" id="add-interest">+ Add interest</button>
           </div>
+          <button type="button" class="btn-add" id="add-interest">+ Add interest</button>
 
-          <div class="section-title collapsible-toggle" id="toggle-education">
+          <!-- Education -->
+          <div class="section-title">
             Education <span class="optional">(optional)</span>
-            <span class="chevron">&#9660;</span>
           </div>
-          <div class="collapsible-content" id="section-education">
-            <div class="dynamic-list" id="education-list">
-              <div class="edu-row dynamic-list-item">
-                <input type="text" name="edu-course" placeholder="e.g. PhD Physics" maxlength="160" />
-                <div class="edu-row-inner">
-                  <input type="text" name="edu-institution" placeholder="Institution" maxlength="160" />
-                  <input type="text" name="edu-year" placeholder="Year" maxlength="4" style="max-width:80px" />
-                </div>
-                <button type="button" class="btn-remove" title="Remove">&times;</button>
+          <div class="dynamic-list" id="education-list">
+            <div class="edu-row dynamic-list-item">
+              <input type="text" name="edu-course" placeholder="e.g. PhD Physics" maxlength="160" />
+              <div class="edu-row-inner">
+                <input type="text" name="edu-institution" placeholder="Institution" maxlength="160" />
+                <input type="text" name="edu-year" placeholder="Year" maxlength="4" style="max-width:80px" />
               </div>
+              <button type="button" class="btn-remove" title="Remove">&times;</button>
             </div>
-            <button type="button" class="btn-add" id="add-education">+ Add education</button>
           </div>
+          <button type="button" class="btn-add" id="add-education">+ Add education</button>
 
-          <div class="section-title collapsible-toggle open" id="toggle-social">
+          <!-- Social & Academic Links -->
+          <div class="section-title">
             Social &amp; Academic Links <span class="optional">(optional)</span>
-            <span class="chevron">&#9660;</span>
           </div>
-          <div class="collapsible-content open" id="section-social">
-            <div class="dynamic-list" id="social-list">
-              <div class="social-row dynamic-list-item">
-                <select name="social-type">
-                  <option value="envelope">Email</option>
-                  <option value="link">Website</option>
-                  <option value="x-twitter">X / Twitter</option>
-                  <option value="github">GitHub</option>
-                  <option value="google-scholar">Google Scholar</option>
-                  <option value="orcid">ORCID</option>
-                  <option value="researchgate">ResearchGate</option>
-                  <option value="linkedin">LinkedIn</option>
-                </select>
-                <input type="url" name="social-link" placeholder="https://..." maxlength="300" />
-                <button type="button" class="btn-remove" title="Remove">&times;</button>
-              </div>
+          <div class="dynamic-list" id="social-list">
+            <div class="social-labeled-row">
+              <span class="social-label">Email</span>
+              <input type="email" name="social-envelope" placeholder="you@example.com" maxlength="300" />
             </div>
-            <button type="button" class="btn-add" id="add-social">+ Add link</button>
+            <div class="social-labeled-row">
+              <span class="social-label">Website</span>
+              <input type="url" name="social-link" placeholder="https://yoursite.com" maxlength="300" />
+            </div>
+            <div class="social-labeled-row">
+              <span class="social-label">X / Twitter</span>
+              <input type="url" name="social-x-twitter" placeholder="https://x.com/yourhandle" maxlength="300" />
+            </div>
+            <div class="social-labeled-row">
+              <span class="social-label">GitHub</span>
+              <input type="url" name="social-github" placeholder="https://github.com/yourname" maxlength="300" />
+            </div>
+            <div class="social-labeled-row">
+              <span class="social-label">Google Scholar</span>
+              <input type="url" name="social-google-scholar" placeholder="https://scholar.google.com/citations?user=..." maxlength="300" />
+            </div>
+            <div class="social-labeled-row">
+              <span class="social-label">ORCID</span>
+              <input type="url" name="social-orcid" placeholder="https://orcid.org/0000-0000-0000-0000" maxlength="300" />
+            </div>
+            <div class="social-labeled-row">
+              <span class="social-label">ResearchGate</span>
+              <input type="url" name="social-researchgate" placeholder="https://www.researchgate.net/profile/..." maxlength="300" />
+            </div>
+            <div class="social-labeled-row">
+              <span class="social-label">LinkedIn</span>
+              <input type="url" name="social-linkedin" placeholder="https://linkedin.com/in/yourname" maxlength="300" />
+            </div>
           </div>
 
           <!-- Access key -->
@@ -499,15 +502,6 @@
     <div class="page-footer">MODE Collaboration &mdash; Profile Submission</div>
 
     <script>
-      /* ---- Collapsible sections ---- */
-      document.querySelectorAll('.collapsible-toggle').forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          toggle.classList.toggle('open');
-          const sectionId = toggle.id.replace('toggle-', 'section-');
-          document.getElementById(sectionId).classList.toggle('open');
-        });
-      });
-
       /* ---- Image upload with drag & drop and preview ---- */
       const dropArea = document.getElementById('image-drop-area');
       const imageInput = document.getElementById('image');
@@ -572,16 +566,6 @@
         item.querySelector('input').focus();
       });
 
-      document.getElementById('add-social').addEventListener('click', () => {
-        const list = document.getElementById('social-list');
-        const item = document.createElement('div');
-        item.className = 'social-row dynamic-list-item';
-        item.innerHTML = '<select name="social-type"><option value="envelope">Email</option><option value="link">Website</option><option value="x-twitter">X / Twitter</option><option value="github">GitHub</option><option value="google-scholar">Google Scholar</option><option value="orcid">ORCID</option><option value="researchgate">ResearchGate</option><option value="linkedin">LinkedIn</option></select><input type="url" name="social-link" placeholder="https://..." maxlength="300" /><button type="button" class="btn-remove" title="Remove">&times;</button>';
-        list.appendChild(item);
-        addRemoveHandler(item.querySelector('.btn-remove'));
-        item.querySelector('input').focus();
-      });
-
       /* ---- Collect dynamic list values ---- */
       function getInterests() {
         return [...document.querySelectorAll('#interests-list input[name="interest"]')]
@@ -597,10 +581,15 @@
       }
 
       function getSocialLinks() {
-        return [...document.querySelectorAll('#social-list .social-row')].map(row => ({
-          icon: row.querySelector('[name="social-type"]').value,
-          link: row.querySelector('[name="social-link"]').value.trim(),
-        })).filter(s => s.link);
+        const icons = ['envelope', 'link', 'x-twitter', 'github', 'google-scholar', 'orcid', 'researchgate', 'linkedin'];
+        const names = ['social-envelope', 'social-link', 'social-x-twitter', 'social-github', 'social-google-scholar', 'social-orcid', 'social-researchgate', 'social-linkedin'];
+        const results = [];
+        for (let i = 0; i < icons.length; i++) {
+          const input = document.querySelector(`[name="${names[i]}"]`);
+          const val = input ? input.value.trim() : '';
+          if (val) results.push({ icon: icons[i], link: val });
+        }
+        return results;
       }
 
       /* ---- Form submission ---- */
