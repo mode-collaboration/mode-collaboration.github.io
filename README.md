@@ -5,9 +5,10 @@
 If you want to add or update your profile, you have two options:
 
 - Visit https://mode-demo.github.io/profile-submission.html and fill in all the required information. Your profile will be added soon.
-- Alternatively, fork this repository and create a new folder with your name (e.g., `Hamza-Hanif`). Inside that folder, add two things:
-  - Your profile information in an `_index.md` file  
+- Alternatively, fork this repository and create a new folder with your name (e.g., `Hamza-Hanif`) in `content/authors` . Inside that folder, add two things:
+  - Your profile information in an `_index.md` file  , for a existing template have a look at `content/authors/Hamza-Hanif/_index.md`. 
   - Your profile picture, renamed as `avatar.jpg`, `avatar.jpeg`, or `avatar.png`  
+- Role rank are as follows: Principal Investigator/Professor (1) , Affiliated Researcher (2), PhD Candidate (3) , Collaborator(4) and M.Sc/B.Sc students(5)
 
   Then push your changes and create a PR/MR. Hamza or Pietro will merge it.
 
