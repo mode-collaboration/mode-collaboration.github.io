@@ -16,7 +16,8 @@ If you want to add or update your profile, you have two options:
 
 ## News
 
-- Fork this repository, make changes in `content/news/index.md` (there is a commented example showing where to add items), then push and create a PR/MR. Hamza or Pietro will merge it.
+To include latest news follow this
+- Fork this repository, create a new folder in `content/post` with a relevant name (e.g., `sixth-mode-workshop-2026`), and inside that folder create an `index.md` file. Make the necessary changes using the template at `content/post/fifth-mode-workshop-2025/index.md`. Then push your changes and create a PR/MR. Hamza or Pietro will merge it.
 
 ---
 
