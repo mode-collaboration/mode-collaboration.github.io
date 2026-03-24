@@ -12,6 +12,7 @@ sections:
         If no opportunities are currently listed, please check back periodically or follow us on
         [LinkedIn](https://www.linkedin.com/groups/12722185/) to stay updated on new openings.
 
+<!-- Commented removed this  if you want to add it 
   - block: markdown
     content:
       title: Open Positions
@@ -30,6 +31,6 @@ sections:
         Send your CV and statement to example@email.com  
 
         ---
-        
-        *(More positions will be added here soon.)*
+
+--> also remove this line
 ---
