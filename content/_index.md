@@ -37,15 +37,22 @@ sections:
         If you are interested in information about MODE (including, but not limited to, the announcement of our yearly workshop and the opening of MODE-related PhD/postdoc positions), or if you want to post such advertisement yourself, you can join our <a href="ttps://e-groups.cern.ch/e-groups/Egroup.do?egroupId=10710684">mode-info mailing list </a>!
  
 
-  - block: markdown
+  - block: collection
     id: news
     content:
       title: Latest News
+      text: ""
+      count: 2
+      filters:
+        folders:
+          - post
+    design:
+      view: compact
+      columns: '1'
+  - block: markdown
+    content:
+      title: ""
       text: |-
-        - **Dec. 2025**: Several new members joined the MODE Collaboration, including Prof. Claudio Kopper, Dr. Hamza Hanif, Prof. Andrea Santamaría García, and others. [See full list](/news/).
-
-        - **Mar. 2025**: The Fifth MODE Workshop on Differentiable Programming for experiment design took place at OAC (Kolymbari, Crete). Details on the [Indico page](https://indico.cern.ch/event/1481852/).
-
         For all news, visit the [News archive](/news/) page.
   - block: collection
     content:
