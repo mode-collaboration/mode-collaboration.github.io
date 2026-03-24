@@ -31,6 +31,9 @@ main:
   - name: Events
     url: events
     weight: 70
+  - name: Opportunities
+    url: opportunities
+    weight: 75
   - name: Contact
     url: '/#Contact'
     weight: 80
