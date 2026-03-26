@@ -1,16 +1,9 @@
 ---
 title: Job Opportunities
-type: landing
+type: opportunities
+---
 
-sections:
-  - block: markdown
-    content:
-      title: Job Opportunities
-      text: |-
-        Browse open positions related to the MODE Collaboration below.
-
-        If no opportunities are currently listed, please check back periodically or follow us on
-        [LinkedIn](https://www.linkedin.com/groups/12722185/) to stay updated on new openings.
+Browse open positions related to the MODE Collaboration below.
 
 # - block: markdown
 #   content:
