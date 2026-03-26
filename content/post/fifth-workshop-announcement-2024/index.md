@@ -3,7 +3,7 @@ title: Fifth MODE Workshop Announced for June 2025
 summary: The Fifth MODE Workshop on Differentiable Programming will take place at OAC (Kolymbari, Crete) on June 9–13, 2025.
 date: 2024-11-21
 authors:
-  - admin
+  - Pietro
 tags:
   - workshop
   - announcement
