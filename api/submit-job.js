@@ -23,9 +23,9 @@ function esc(str) {
   return (str || '').replace(/"/g, '\\"');
 }
 
-function buildJobMarkdown({ title, description, organization, location, jobType, applyUrl, active }) {
+function buildJobMarkdown({ title, description, organization, location, jobType, applyUrl, deadline, active }) {
   const date = new Date().toISOString().split('T')[0];
-  const frontmatter = [
+  const lines = [
     '---',
     `title: "${esc(title)}"`,
     `date: ${date}`,
@@ -34,14 +34,17 @@ function buildJobMarkdown({ title, description, organization, location, jobType,
     `location: "${esc(location)}"`,
     `job_type: "${esc(jobType)}"`,
     `apply_url: "${esc(applyUrl)}"`,
+  ];
+  if (deadline) lines.push(`deadline: "${esc(deadline)}"`);
+  lines.push(
     `active: ${active ? 'true' : 'false'}`,
     'tags:',
     '- opportunities',
     `- ${jobType || 'position'}`,
     '---',
-  ].join('\n');
+  );
 
-  return `${frontmatter}\n\n${description}\n`;
+  return lines.join('\n') + `\n\n${description}\n`;
 }
 
 async function githubRequest(path, { method = 'GET', body } = {}) {
@@ -121,6 +124,7 @@ module.exports = async function handler(req, res) {
       location,
       jobType,
       applyUrl,
+      deadline,
       active,
       accessKey,
     } = body || {};
@@ -148,6 +152,7 @@ module.exports = async function handler(req, res) {
       location: location || '',
       jobType: jobType || 'Position',
       applyUrl: applyUrl || '',
+      deadline: deadline || '',
       active: active !== false,
     });
 
