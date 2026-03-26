@@ -2,7 +2,7 @@
 <div class="universal-wrapper pt-3 pb-5">
   <article>
     <h1>{{ .Title }}</h1>
-    <div style="font-size: 0.9rem; opacity: 0.75; margin: 1rem 0 1.5rem;">
+    <div style="font-size: 0.9rem; opacity: 0.7; margin: 1rem 0 1.5rem;">
       {{ with .Params.organization }}<span style="margin-right: 1rem;"><strong>Organization:</strong> {{ . }}</span>{{ end }}
       {{ with .Params.location }}<span style="margin-right: 1rem;"><strong>Location:</strong> {{ . }}</span>{{ end }}
       {{ with .Params.job_type }}<span style="margin-right: 1rem;"><strong>Type:</strong> {{ . }}</span>{{ end }}
@@ -15,7 +15,7 @@
     </div>
 
     {{ with .Params.apply_url }}
-      <div class="mt-4">
+      <div style="margin-top: 2rem;">
         <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-primary">
           Apply Now &rarr;
         </a>
