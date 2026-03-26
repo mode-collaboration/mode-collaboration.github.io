@@ -88,15 +88,6 @@
 
       select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23607d8b' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.75rem center; padding-right: 2.5rem; }
 
-      /* Toggle */
-      .toggle-row { display: flex; align-items: center; gap: 0.75rem; }
-      .toggle-switch { position: relative; width: 50px; height: 26px; flex-shrink: 0; }
-      .toggle-switch input { opacity: 0; width: 0; height: 0; }
-      .toggle-slider { position: absolute; inset: 0; background: var(--border); border-radius: 26px; cursor: pointer; transition: var(--transition); }
-      .toggle-slider::before { content: ''; position: absolute; width: 20px; height: 20px; left: 3px; bottom: 3px; background: #fff; border-radius: 50%; transition: var(--transition); }
-      .toggle-switch input:checked + .toggle-slider { background: var(--primary); }
-      .toggle-switch input:checked + .toggle-slider::before { transform: translateX(24px); }
-
       /* Submit button */
       .btn-submit { padding: 0.9rem 2rem; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border: none; border-radius: var(--radius); font: inherit; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: var(--transition); letter-spacing: 0.3px; margin-top: 0.5rem; position: relative; overflow: hidden; }
       .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(21,101,192,0.35); }
@@ -285,13 +276,6 @@
             <label>Application URL <span class="optional">(optional)</span><input id="job-apply-url" name="applyUrl" type="url" maxlength="500" placeholder="https://careers.example.com/apply" /></label>
             <label>Description * <span class="optional">(Markdown supported)</span><textarea id="job-description" name="description" required maxlength="10000" rows="8" placeholder="Describe the position, requirements, and how to apply..."></textarea></label>
 
-            <div class="section-title">Visibility</div>
-            <div class="toggle-row">
-              <label class="toggle-switch"><input type="checkbox" id="job-active" name="active" checked /><span class="toggle-slider"></span></label>
-              <span style="font-weight:600;">Active</span>
-              <span class="hint" style="margin:0;">When enabled, this opportunity will be visible on the website.</span>
-            </div>
-
             <div class="section-title">Submission</div>
             <label>Access Key *<input id="job-accessKey" name="accessKey" type="password" required placeholder="Enter the access key" /></label>
             <button type="submit" class="btn-submit" id="btn-submit-job"><span class="spinner"></span><span class="btn-text">Submit Opportunity</span></button>
@@ -444,11 +428,11 @@
           title: document.getElementById('job-title').value.trim(), description: document.getElementById('job-description').value.trim(),
           organization: document.getElementById('job-organization').value.trim(), location: document.getElementById('job-location').value.trim(),
           jobType: document.getElementById('job-type').value, applyUrl: document.getElementById('job-apply-url').value.trim(),
-          deadline: document.getElementById('job-deadline').value, active: document.getElementById('job-active').checked,
+          deadline: document.getElementById('job-deadline').value,
           accessKey: document.getElementById('job-accessKey').value,
         };
         if (!payload.title || !payload.description || !payload.accessKey) { setStatus(document.getElementById('status-job'), 'Please fill all required fields.', 'error'); return; }
-        await submitForm(API_BASE + '/submit-job', payload, document.getElementById('btn-submit-job'), document.getElementById('status-job'), e.target, () => { document.getElementById('job-active').checked = true; });
+        await submitForm(API_BASE + '/submit-job', payload, document.getElementById('btn-submit-job'), document.getElementById('status-job'), e.target);
       });
     </script>
   </body>
