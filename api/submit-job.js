@@ -23,7 +23,7 @@ function esc(str) {
   return (str || '').replace(/"/g, '\\"');
 }
 
-function buildJobMarkdown({ title, description, organization, location, jobType, applyUrl, deadline, active }) {
+function buildJobMarkdown({ title, description, organization, location, jobType, applyUrl, deadline }) {
   const date = new Date().toISOString().split('T')[0];
   const lines = [
     '---',
@@ -37,7 +37,6 @@ function buildJobMarkdown({ title, description, organization, location, jobType,
   ];
   if (deadline) lines.push(`deadline: "${esc(deadline)}"`);
   lines.push(
-    `active: ${active ? 'true' : 'false'}`,
     'tags:',
     '- opportunities',
     `- ${jobType || 'position'}`,
@@ -125,7 +124,6 @@ module.exports = async function handler(req, res) {
       jobType,
       applyUrl,
       deadline,
-      active,
       accessKey,
     } = body || {};
 
@@ -153,7 +151,6 @@ module.exports = async function handler(req, res) {
       jobType: jobType || 'Position',
       applyUrl: applyUrl || '',
       deadline: deadline || '',
-      active: active !== false,
     });
 
     const repo = await githubRequest(`/repos/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}`);
@@ -185,7 +182,7 @@ module.exports = async function handler(req, res) {
         title: `Add job opportunity: ${title}`,
         head: branchName,
         base: defaultBranch,
-        body: `Automated job opportunity submission: **${title}**\nPath: \`${jobDir}/\`\nActive: ${active !== false}\n\nPlease review and merge.`,
+        body: `Automated job opportunity submission: **${title}**\nPath: \`${jobDir}/\`\n\nPlease review and merge.`,
         draft: true,
       },
     });
