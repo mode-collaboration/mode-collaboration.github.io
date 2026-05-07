@@ -99,6 +99,24 @@ sections:
         **Steering Board**  
         The whole Steering Board can be reached by writing to:  mode-collaboration-sb(at)cern(dot)ch
 
+        ---
+
+        The Steering Board of the MODE Collaboration includes:
+
+        - Dr. **Sarah Barnes**, DLR Institute for the Protection of Maritime Infrastructures
+        - Prof. **Tommaso Dorigo**, INFN-PD
+        - Prof. **Nicolas Gauger**, RPTU
+        - Prof. **Christian Glaser**, UU
+        - Prof. **Lisa Kusch**, TU/e
+        - Dr. **Fedor Ratnikov**, HSE
+        - Prof. **Pietro Vischia**, UniOvi
+
+        Previous Steering Boards:
+
+        - **2025:** Pietro Vischia (UNIOVI, coordinator), Tommaso Dorigo (INFN-PD), Nicolas Gauger (RPTU), Andrea Giammanco (UCLouvain), Christian Glaser (UU), Lisa Kusch (TU/e), Fedor Ratnikov (HSE)
+
+        - **2020-2024:** Tommaso Dorigo (INFN-PD, coordinator), Julien Donini (UCA), Andrea Giammanco (UCLouvain), Fedor Ratnikov (HSE), Pietro Vischia (UniOvi)
+
       autolink: false
     design:
       columns: '1'

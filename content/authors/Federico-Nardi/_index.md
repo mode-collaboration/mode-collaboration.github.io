@@ -3,10 +3,10 @@ title: "Federico Nardi"
 authors:
 - "federico-nardi"
 superuser: false
-role: "PhD Candidate"
-role_rank: 3
+role: "Affiliated Researcher"
+role_rank: 1
 organizations:
-- name: "Université Clermont Auvergne (joint with Università di Padova)"
+- name: "TU Munich"
   url: ""
 bio: ""
 interests: []
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "Affiliated Researcher"
 ---
 
 {style="text-align: justify;"}
