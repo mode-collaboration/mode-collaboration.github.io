@@ -9,7 +9,7 @@ sections:
     content:
       title: 
       image:
-        filename: mode_logo.svg
+        filename: mode_logo.png
       text: |
         <div style="margin-top: 100px;">
 
