@@ -10,12 +10,12 @@ authors:
 superuser: false
 
 # Role/position
-role: "Principal Investigator/Professor"
+role: "Affiliated Researcher"
 role_rank: 1
 
 # Organizations/Affiliations
 organizations:
-- name: "Simon Fraser University"
+- name: "Secretary of MODE Collaboration"
   url: ""
 
 bio: ""
@@ -43,28 +43,28 @@ social:
 - icon: envelope
   icon_pack: fas
   link: 'mailto:hamzahanif2210@gmail.com'  # For a direct email link, use "mailto:test@example.org".
-- icon: x-twitter
-  icon_pack: fab
-  link: https://x.com/HamzaHa45177170
+# - icon: x-twitter
+#   icon_pack: fab
+#   link: your x/twitter profile line 
 # - icon: google-scholar
 #   icon_pack: ai
 #   link: https://scholar.google.com/citations?user=6zozRRYAAAAJ
-- icon: github
-  icon_pack: fab
-  link: https://github.com/hamzahanif2210?tab=repositories
+# - icon: github
+#   icon_pack: fab
+#   link: your github profile link
 # - icon: researchgate
 #   icon_pack: ai
-#   link: https://www.researchgate.net/profile/Haoyi-Niu-2
-- icon: orcid
-  icon_pack: ai
-  link: https://orcid.org/0000-0002-0984-7887
+#   link: your researchgate profile link
+# - icon: orcid
+#   icon_pack: ai
+#   link: your orcid profile link
 
 
 highlight_name: true
 
 user_groups:
-- "Principal Investigator/Professor"
+- "Affiliated Researcher"
 ---
 
 {style="text-align: justify;"}
-Hi! I am currently a master student at School of Computer Science, Beijing University of Posts and Telecommunications (BUPT). In addition, I am working as a research intern at the Institute for AI Industry Research (AIR), Tsinghua University, under the supervision of Prof. Xianyuan Zhan.
+Hi! I have a PhD in Particle Physics, in which I searched for long-lived particles with the ATLAS detector. Now I am focusing on optimization studies for the layout of the upcoming TAMBO neutrino experiment.
