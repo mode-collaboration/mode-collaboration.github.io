@@ -3,8 +3,8 @@ title: "Alexander Schilling"
 authors:
 - "alexander-schilling"
 superuser: false
-role: "Affiliated Researcher"
-role_rank: 2
+role: "PhD Candidate"
+role_rank: 3
 organizations:
 - name: "University of Kaiserslautern-Landau"
   url: ""
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Affiliated Researcher"
+- "PhD Candidate"
 ---
 
 {style="text-align: justify;"}

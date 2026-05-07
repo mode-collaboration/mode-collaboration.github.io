@@ -3,8 +3,8 @@ title: "Ralf Keidel"
 authors:
 - "ralf-keidel"
 superuser: false
-role: "Principal Investigator/Professor"
-role_rank: 1
+role: "Affiliated Researcher"
+role_rank: 2
 organizations:
 - name: "University of Kaiserslautern-Landau"
   url: ""
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Affiliated Researcher"
 ---
 
 {style="text-align: justify;"}

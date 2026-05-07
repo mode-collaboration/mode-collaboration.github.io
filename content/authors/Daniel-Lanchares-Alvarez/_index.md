@@ -1,12 +1,12 @@
 ---
-title: "Jan Kieseler"
+title: "Daniel Lanchares Álvarez"
 authors:
-- "jan-kieseler"
+- "daniel-lanchares-alvarez"
 superuser: false
-role: "Principal Investigator/Professor"
-role_rank: 1
+role: "PhD Candidate"
+role_rank: 3
 organizations:
-- name: "Karlsruher Institut für Technologie"
+- name: "Universidad de Oviedo (Department of Physics and ICTEA)"
   url: ""
 bio: ""
 interests: []
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "PhD Candidate"
 ---
 
 {style="text-align: justify;"}

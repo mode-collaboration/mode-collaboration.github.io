@@ -3,8 +3,8 @@ title: "Andrey Ustyuzhanin"
 authors:
 - "andrey-ustyuzhanin"
 superuser: false
-role: "Principal Investigator/Professor"
-role_rank: 1
+role: "Affiliated Researcher"
+role_rank: 2
 organizations:
 - name: "Higher School of Economics of Moscow"
   url: ""
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Affiliated Researcher"
 ---
 
 {style="text-align: justify;"}

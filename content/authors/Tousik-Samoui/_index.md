@@ -3,8 +3,8 @@ title: "Tousik Samoui"
 authors:
 - "tousik-samoui"
 superuser: false
-role: "PhD Candidate"
-role_rank: 3
+role: "Affiliated Researcher"
+role_rank: 2
 organizations:
 - name: "IISER Kolkata"
   url: ""
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "Affiliated Researcher"
 ---
 
 {style="text-align: justify;"}

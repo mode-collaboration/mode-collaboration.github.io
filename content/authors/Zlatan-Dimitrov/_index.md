@@ -3,8 +3,8 @@ title: "Zlatan Dimitrov"
 authors:
 - "zlatan-dimitrov"
 superuser: false
-role: "Collaborator"
-role_rank: 6
+role: "Principal Investigator/Professor"
+role_rank: 1
 organizations:
 - name: "Adastra and Gate Institute"
   url: ""
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Collaborator"
+- "Principal Investigator/Professor"
 ---
 
 {style="text-align: justify;"}
