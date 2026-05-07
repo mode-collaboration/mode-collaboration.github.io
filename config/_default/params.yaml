@@ -1,0 +1,119 @@
+# SITE SETUP
+# Guide: https://docs.hugoblox.com/tutorial/
+# Documentation: https://docs.hugoblox.com/
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+
+# Appearance
+appearance:
+  mode: system
+#  color: emerald
+  theme_day: minimal
+  theme_night: minimal
+  font: native
+  font_size: L
+
+# SEO
+marketing:
+  seo:
+    site_type: ResearchOrganization
+    local_business_type: ''
+    org_name: 'MODE Collaboration'
+    description: 'Welcome to MODE (for Machine-learning Optimized Design of Experiments) is a collaboration of physicists and computer scientists who target the use of differentiable programming in design optimization of physics experiment.'
+    twitter: ''
+  analytics:
+    google_analytics: 'G-NL9F8GHZ5L'
+    baidu_tongji: ''
+    plausible: ''
+    fathom: ''
+    pirsch: ''
+  verification:
+    google: 'szb7sewlHxmrsvWhPcNZp98imx07-weA-YscIlC-YKA'
+    baidu: ''
+
+# Site header
+header:
+  navbar:
+    block: navbar
+    enable: true
+    align: r
+#    blox: "navbar"
+    show_logo: true
+    fixed_to_top: true
+    show_day_night: true
+    show_search: true
+    show_theme_chooser: true
+#    logo:
+#      text: ""
+
+# Site footer
+footer:
+  copyright:
+    notice: '© {year} - MODE-Collaboration.'
+    license:
+      enable: false
+      allow_derivatives: false
+      share_alike: false
+      allow_commercial: false
+
+# Localization
+locale:
+  date_format: 'Jan 2, 2006'
+  time_format: '3:04 PM'
+
+# Site features
+features:
+  syntax_highlighter:
+    theme_light: github-light
+    theme_dark: dracula
+  math:
+    enable: true
+  privacy_pack:
+    enable: false
+  repository:
+    url: 'https://github.com/<username>/<repository>'
+    content_dir: content
+    branch: main
+  avatar:
+    gravatar: false
+    shape: circle
+  comment:
+    provider: ''
+    disqus:
+      shortname: ''
+      show_count: true
+    commento:
+      url: ''
+    giscus:
+      repo: ''
+      repo_id: ''
+      category: ''
+      category_id: ''
+  search:
+    provider: wowchemy
+    algolia:
+      app_id: ''
+      api_key: ''
+      index_name: ''
+      show_logo: false
+  map:
+    provider: ''
+    api_key: ''
+    zoom: 15
+
+# Extensions
+
+extensions:
+  cms:
+    branch: main
+    local_backend: false
+  academicons:
+    enable: true
+
+# Security
+
+security:
+  # Allow frame for embedding speaker notes in slides
+  allow_frame: true
+
+custom_js:
+  - people-tabs.js

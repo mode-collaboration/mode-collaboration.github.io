@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submissions — MODE Collaboration</title>
+    <style>
+      :root {
+        --primary: #1565c0;
+        --primary-light: #1e88e5;
+        --primary-dark: #0d47a1;
+        --bg: #f5f7fa;
+        --card: #ffffff;
+        --text: #263238;
+        --text-muted: #607d8b;
+        --border: #cfd8dc;
+        --error: #c62828;
+        --success: #2e7d32;
+        --radius: 12px;
+        --shadow: 0 4px 24px rgba(0,0,0,0.08);
+        --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+
+      /* Header */
+      .page-header { background: linear-gradient(135deg, var(--primary-dark), var(--primary-light)); color: #fff; padding: 3rem 1.5rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+      .page-header::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+      .page-header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; position: relative; }
+      .page-header p { margin-top: 0.5rem; opacity: 0.9; font-size: 1.05rem; position: relative; }
+
+      .container { max-width: 820px; margin: -1.5rem auto 3rem; padding: 0 1.25rem; position: relative; z-index: 1; }
+      .form-card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 2rem 2.25rem 2.5rem; animation: fadeInUp 0.4s ease; }
+
+      /* Tabs */
+      .tabs { display: flex; gap: 0; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); }
+      .tab-btn { flex: 1; padding: 0.85rem 0.5rem; background: none; border: none; border-bottom: 3px solid transparent; font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: var(--transition); margin-bottom: -2px; white-space: nowrap; }
+      .tab-btn:hover { color: var(--primary); }
+      .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+      .tab-panel { display: none; }
+      .tab-panel.active { display: block; }
+
+      /* Section titles */
+      .section-title { font-size: 1rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.8px; margin: 1.75rem 0 1rem; display: flex; align-items: center; gap: 0.5rem; }
+      .section-title::after { content: ''; flex: 1; height: 2px; background: linear-gradient(90deg, rgba(21,101,192,0.2), transparent); }
+      .section-title:first-child { margin-top: 0; }
+
+      /* Form */
+      form { display: grid; gap: 1.1rem; }
+      .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+      label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; font-weight: 600; color: var(--text); }
+      label .optional { font-weight: 400; color: var(--text-muted); font-size: 0.82rem; }
+      input, textarea, select { font: inherit; font-size: 0.95rem; padding: 0.7rem 0.9rem; border: 2px solid var(--border); border-radius: 8px; background: #fff; color: var(--text); transition: var(--transition); }
+      input:focus, textarea:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(21,101,192,0.12); }
+      textarea { min-height: 90px; resize: vertical; }
+      .hint { font-size: 0.82rem; color: var(--text-muted); font-weight: 400; margin-top: 0.1rem; }
+
+      /* Image upload */
+      .image-upload-area { border: 2px dashed var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; cursor: pointer; transition: var(--transition); position: relative; overflow: hidden; background: #fafbfc; }
+      .image-upload-area:hover, .image-upload-area.dragover { border-color: var(--primary); background: rgba(21,101,192,0.03); }
+      .image-upload-area input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; border: none; padding: 0; }
+      .image-upload-area .upload-icon { font-size: 2rem; margin-bottom: 0.4rem; }
+      .image-upload-area .upload-text { color: var(--text-muted); font-size: 0.9rem; }
+      .image-upload-area .upload-text strong { color: var(--primary); }
+      .image-preview { display: none; width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0.5rem auto 0; border: 3px solid var(--primary); }
+      .image-upload-area.has-image .image-preview { display: block; }
+      .image-upload-area.has-image .upload-icon, .image-upload-area.has-image .upload-text { display: none; }
+      .image-file-name { display: none; font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; }
+      .image-upload-area.has-image .image-file-name { display: block; }
+
+      /* Dynamic lists */
+      .dynamic-list { display: grid; gap: 0.6rem; }
+      .dynamic-list-item { display: flex; gap: 0.5rem; align-items: flex-start; }
+      .dynamic-list-item input, .dynamic-list-item select { flex: 1; }
+      .dynamic-list-item .btn-remove { padding: 0.55rem 0.7rem; background: none; border: 2px solid #ef9a9a; border-radius: 8px; color: var(--error); cursor: pointer; font-size: 1rem; line-height: 1; transition: var(--transition); flex-shrink: 0; }
+      .dynamic-list-item .btn-remove:hover { background: #ffebee; }
+      .btn-add { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.5rem 1rem; background: none; border: 2px dashed var(--border); border-radius: 8px; color: var(--primary); cursor: pointer; font: inherit; font-size: 0.88rem; font-weight: 600; transition: var(--transition); justify-self: start; }
+      .btn-add:hover { border-color: var(--primary); background: rgba(21,101,192,0.03); }
+      .edu-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.5rem; align-items: start; }
+      .edu-row-inner { display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; }
+      .edu-row input[name="edu-year"] { max-width: 80px; }
+      @media (max-width: 600px) { .edu-row { grid-template-columns: 1fr; } }
+      .social-labeled-row { display: grid; grid-template-columns: 140px 1fr; gap: 0.75rem; align-items: center; }
+      .social-labeled-row .social-label { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+      @media (max-width: 600px) { .social-labeled-row { grid-template-columns: 1fr; } }
+
+      select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23607d8b' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.75rem center; padding-right: 2.5rem; }
+
+      /* Submit button */
+      .btn-submit { padding: 0.9rem 2rem; background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; border: none; border-radius: var(--radius); font: inherit; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: var(--transition); letter-spacing: 0.3px; margin-top: 0.5rem; position: relative; overflow: hidden; }
+      .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(21,101,192,0.35); }
+      .btn-submit:active { transform: translateY(0); }
+      .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+      .btn-submit .spinner { display: none; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; margin-right: 0.5rem; }
+      .btn-submit.loading .spinner { display: inline-block; }
+      .btn-submit.loading .btn-text { opacity: 0.8; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+
+      /* Status */
+      .status-msg { margin-top: 1rem; padding: 0; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
+      .status-msg:not(:empty) { padding: 1rem 1.25rem; }
+      .status-msg.error { background: #ffebee; color: var(--error); border: 1px solid #ef9a9a; }
+      .status-msg.success { background: #e8f5e9; color: var(--success); border: 1px solid #a5d6a7; }
+      .status-msg a { color: inherit; font-weight: 700; }
+
+      /* BibTeX textarea */
+      .bibtex-area { font-family: 'Courier New', Courier, monospace; font-size: 0.88rem; min-height: 200px; white-space: pre; tab-size: 2; }
+
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+      .page-footer { text-align: center; padding: 1.5rem; color: var(--text-muted); font-size: 0.82rem; }
+    </style>
+  </head>
+  <body>
+    <div class="page-header">
+      <h1>MODE Collaboration Submissions</h1>
+      <p>Submit profiles, bibliography, news, or job opportunities — each creates a draft PR for review.</p>
+    </div>
+
+    <div class="container">
+      <div class="form-card">
+
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="profile">Profile</button>
+          <button class="tab-btn" data-tab="bib">Bibliography</button>
+          <button class="tab-btn" data-tab="news">News</button>
+          <button class="tab-btn" data-tab="job">Opportunities</button>
+        </div>
+
+        <!-- ==================== PROFILE TAB ==================== -->
+        <div id="tab-profile" class="tab-panel active">
+          <form id="profile-form">
+            <div class="section-title">Basic Information</div>
+            <div class="form-row">
+              <label>Full Name *<input id="name" name="name" required maxlength="100" placeholder="Jane Doe" /><span class="hint">As it appears on arXiv.</span></label>
+              <label>Role *
+                <select id="role" name="role" required>
+                  <option value="">— Select role —</option>
+                  <option value="Principal Investigator/Professor">Principal Investigator / Professor</option>
+                  <option value="Affiliated Researcher">Affiliated Researcher</option>
+                  <option value="PhD Candidate">PhD Candidate</option>
+                  <option value="Collaborator">Collaborator</option>
+                  <option value="B.Sc/Master">B.Sc / Master</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>Organization <span class="optional">(optional)</span><input id="affiliation" name="affiliation" maxlength="160" placeholder="University of Example" /></label>
+              <label>Organization URL <span class="optional">(optional)</span><input id="org-url" name="org-url" type="url" maxlength="300" placeholder="https://university.example.com" /></label>
+            </div>
+            <label>Short Bio <span class="optional">(optional, Markdown)</span><textarea id="bio" name="bio" maxlength="2000" placeholder="Write a brief biography..."></textarea></label>
+
+            <div class="section-title">Profile Photo</div>
+            <div class="image-upload-area" id="image-drop-area">
+              <div class="upload-icon">&#128247;</div>
+              <div class="upload-text"><strong>Click to upload</strong> or drag &amp; drop</div>
+              <div class="upload-text" style="font-size:0.8rem;">JPG, PNG, GIF, or WebP &bull; Max 5 MB</div>
+              <img class="image-preview" id="image-preview" alt="Preview" />
+              <div class="image-file-name" id="image-file-name"></div>
+              <input id="image" name="image" type="file" accept="image/*" />
+            </div>
+
+            <div class="section-title">Research Interests <span class="optional">(optional)</span></div>
+            <div class="dynamic-list" id="interests-list">
+              <div class="dynamic-list-item"><input type="text" name="interest" placeholder="e.g. Machine Learning" maxlength="120" /><button type="button" class="btn-remove" title="Remove">&times;</button></div>
+            </div>
+            <button type="button" class="btn-add" id="add-interest">+ Add interest</button>
+
+            <div class="section-title">Education <span class="optional">(optional)</span></div>
+            <div class="dynamic-list" id="education-list">
+              <div class="edu-row dynamic-list-item">
+                <input type="text" name="edu-course" placeholder="e.g. PhD Physics" maxlength="160" />
+                <div class="edu-row-inner"><input type="text" name="edu-institution" placeholder="Institution" maxlength="160" /><input type="text" name="edu-year" placeholder="Year" maxlength="4" style="max-width:80px" /></div>
+                <button type="button" class="btn-remove" title="Remove">&times;</button>
+              </div>
+            </div>
+            <button type="button" class="btn-add" id="add-education">+ Add education</button>
+
+            <div class="section-title">Social &amp; Academic Links <span class="optional">(optional)</span></div>
+            <div class="dynamic-list" id="social-list">
+              <div class="social-labeled-row"><span class="social-label">Email</span><input type="email" name="social-envelope" placeholder="you@example.com" maxlength="300" /></div>
+              <div class="social-labeled-row"><span class="social-label">Website</span><input type="url" name="social-link" placeholder="https://yoursite.com" maxlength="300" /></div>
+              <div class="social-labeled-row"><span class="social-label">X / Twitter</span><input type="url" name="social-x-twitter" placeholder="https://x.com/yourhandle" maxlength="300" /></div>
+              <div class="social-labeled-row"><span class="social-label">GitHub</span><input type="url" name="social-github" placeholder="https://github.com/yourname" maxlength="300" /></div>
+              <div class="social-labeled-row"><span class="social-label">Google Scholar</span><input type="url" name="social-google-scholar" placeholder="https://scholar.google.com/citations?user=..." maxlength="300" /></div>
+              <div class="social-labeled-row"><span class="social-label">ORCID</span><input type="url" name="social-orcid" placeholder="https://orcid.org/0000-0000-0000-0000" maxlength="300" /></div>
+              <div class="social-labeled-row"><span class="social-label">ResearchGate</span><input type="url" name="social-researchgate" placeholder="https://www.researchgate.net/profile/..." maxlength="300" /></div>
+              <div class="social-labeled-row"><span class="social-label">LinkedIn</span><input type="url" name="social-linkedin" placeholder="https://linkedin.com/in/yourname" maxlength="300" /></div>
+            </div>
+
+            <div class="section-title">Submission</div>
+            <label>Access Key *<input id="profile-accessKey" name="accessKey" type="password" required placeholder="Enter the access key" /><span class="hint">Required to prevent unauthorized submissions.</span></label>
+            <button type="submit" class="btn-submit" id="btn-submit-profile"><span class="spinner"></span><span class="btn-text">Submit Profile</span></button>
+          </form>
+          <p class="status-msg" id="status-profile" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== BIBLIOGRAPHY TAB ==================== -->
+        <div id="tab-bib" class="tab-panel">
+          <form id="bib-form">
+            <div class="section-title">Add BibTeX Entries</div>
+            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.5rem;">
+              Paste one or more BibTeX entries below. They will be appended to <code>publications.bib</code> and the publication pages will be auto-generated after the PR is merged.
+            </p>
+            <label>
+              BibTeX *
+              <textarea id="bib-content" name="bibtex" required class="bibtex-area" placeholder="@article{AuthorYear,
+  author = {Last, First and Last, First},
+  title = {{Your Paper Title}},
+  journal = {Journal Name},
+  year = {2025},
+  doi = {10.xxxx/xxxxx}
+}"></textarea>
+            </label>
+
+            <div class="section-title">Submission</div>
+            <label>Access Key *<input id="bib-accessKey" name="accessKey" type="password" required placeholder="Enter the access key" /></label>
+            <button type="submit" class="btn-submit" id="btn-submit-bib"><span class="spinner"></span><span class="btn-text">Submit Bibliography</span></button>
+          </form>
+          <p class="status-msg" id="status-bib" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== NEWS TAB ==================== -->
+        <div id="tab-news" class="tab-panel">
+          <form id="news-form">
+            <div class="section-title">News Article</div>
+            <label>Title *<input id="news-title" name="title" required maxlength="200" placeholder="e.g. MODE Workshop 2026 Announced" /></label>
+            <label>Summary <span class="optional">(short description for listings)</span><input id="news-summary" name="summary" maxlength="300" placeholder="Brief one-line summary..." /></label>
+            <label>Content * <span class="optional">(Markdown supported)</span><textarea id="news-content" name="content" required maxlength="10000" rows="8" placeholder="Write the full news article here..."></textarea></label>
+            <div class="form-row">
+              <label>Author(s) <span class="optional">(comma-separated)</span><input id="news-authors" name="authors" maxlength="300" placeholder="e.g. Jane Doe, John Smith" /></label>
+              <label>Tags <span class="optional">(comma-separated)</span><input id="news-tags" name="tags" maxlength="200" placeholder="e.g. workshop, announcement" /></label>
+            </div>
+
+            <div class="section-title">Featured Image <span class="optional">(optional)</span></div>
+            <div class="image-upload-area" id="news-image-drop-area">
+              <div class="upload-icon">&#128247;</div>
+              <div class="upload-text"><strong>Click to upload</strong> or drag &amp; drop</div>
+              <div class="upload-text" style="font-size:0.8rem;">JPG, PNG, GIF, or WebP &bull; Max 5 MB</div>
+              <img class="image-preview" id="news-image-preview" alt="Preview" />
+              <div class="image-file-name" id="news-image-file-name"></div>
+              <input id="news-image" name="image" type="file" accept="image/*" />
+            </div>
+
+            <div class="section-title">Submission</div>
+            <label>Access Key *<input id="news-accessKey" name="accessKey" type="password" required placeholder="Enter the access key" /></label>
+            <button type="submit" class="btn-submit" id="btn-submit-news"><span class="spinner"></span><span class="btn-text">Submit News</span></button>
+          </form>
+          <p class="status-msg" id="status-news" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== OPPORTUNITIES TAB ==================== -->
+        <div id="tab-job" class="tab-panel">
+          <form id="job-form">
+            <div class="section-title">Job Details</div>
+            <label>Position Title *<input id="job-title" name="title" required maxlength="200" placeholder="e.g. PhD Position in Differentiable Programming" /></label>
+            <div class="form-row">
+              <label>Organization *<input id="job-organization" name="organization" required maxlength="200" placeholder="e.g. CERN" /></label>
+              <label>Location <span class="optional">(optional)</span><input id="job-location" name="location" maxlength="200" placeholder="e.g. Geneva, Switzerland" /></label>
+            </div>
+            <div class="form-row">
+              <label>Position Type *
+                <select id="job-type" name="jobType" required>
+                  <option value="">— Select type —</option>
+                  <option value="PhD">PhD Position</option>
+                  <option value="PostDoc">PostDoc</option>
+                  <option value="Research Fellow">Research Fellow</option>
+                  <option value="Faculty">Faculty</option>
+                  <option value="Engineer">Engineer / Developer</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <label>Application Deadline <span class="optional">(optional)</span><input id="job-deadline" name="deadline" type="date" /></label>
+            </div>
+            <label>Application URL <span class="optional">(optional)</span><input id="job-apply-url" name="applyUrl" type="url" maxlength="500" placeholder="https://careers.example.com/apply" /></label>
+            <label>Description * <span class="optional">(Markdown supported)</span><textarea id="job-description" name="description" required maxlength="10000" rows="8" placeholder="Describe the position, requirements, and how to apply..."></textarea></label>
+
+            <div class="section-title">Submission</div>
+            <label>Access Key *<input id="job-accessKey" name="accessKey" type="password" required placeholder="Enter the access key" /></label>
+            <button type="submit" class="btn-submit" id="btn-submit-job"><span class="spinner"></span><span class="btn-text">Submit Opportunity</span></button>
+          </form>
+          <p class="status-msg" id="status-job" aria-live="polite"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="page-footer">MODE Collaboration &mdash; Submissions Portal</div>
+
+    <script>
+      const API_BASE = 'https://mode-demo-github-io.vercel.app/api';
+
+      /* ===== Tab switching ===== */
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+        });
+      });
+
+      /* ===== Shared helpers ===== */
+      function setStatus(el, message, type) {
+        el.className = 'status-msg ' + (type || '');
+        if (type === 'success' && message.includes('http')) {
+          const m = message.match(/(https?:\/\/[^\s]+)/);
+          if (m) { el.innerHTML = message.replace(m[0], `<a href="${m[0]}" target="_blank" rel="noopener">${m[0]}</a>`); return; }
+        }
+        el.textContent = message;
+      }
+
+      function fileToDataUrl(file) {
+        return new Promise((resolve, reject) => {
+          const r = new FileReader();
+          r.onload = () => resolve(r.result);
+          r.onerror = () => reject(new Error('Failed to read file.'));
+          r.readAsDataURL(file);
+        });
+      }
+
+      function setupImageUpload(dropId, inputId, previewId, fileNameId) {
+        const drop = document.getElementById(dropId);
+        const input = document.getElementById(inputId);
+        const preview = document.getElementById(previewId);
+        const fn = document.getElementById(fileNameId);
+        function show(f) { if (!f) return; const r = new FileReader(); r.onload = e => { preview.src = e.target.result; fn.textContent = f.name; drop.classList.add('has-image'); }; r.readAsDataURL(f); }
+        input.addEventListener('change', () => show(input.files[0]));
+        ['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('dragover'); }));
+        ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('dragover'); }));
+        drop.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f && f.type.startsWith('image/')) { const dt = new DataTransfer(); dt.items.add(f); input.files = dt.files; show(f); } });
+        return { dropArea: drop };
+      }
+
+      async function submitForm(url, payload, btn, statusEl, form, resetExtra) {
+        setStatus(statusEl, '', '');
+        btn.classList.add('loading'); btn.disabled = true;
+        try {
+          const resp = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          const data = await resp.json().catch(() => ({}));
+          if (!resp.ok) throw new Error(data.error || `Submission failed (${resp.status}).`);
+          setStatus(statusEl, `Success! Draft PR created: ${data.prUrl}`, 'success');
+          form.reset();
+          if (resetExtra) resetExtra();
+        } catch (err) {
+          setStatus(statusEl, err.message || 'Something went wrong.', 'error');
+        } finally {
+          btn.classList.remove('loading'); btn.disabled = false;
+        }
+      }
+
+      /* ===== PROFILE ===== */
+      const profileDrop = setupImageUpload('image-drop-area', 'image', 'image-preview', 'image-file-name');
+
+      function addRemoveHandler(btn) { btn.addEventListener('click', () => { const l = btn.closest('.dynamic-list'); if (l && l.children.length > 1) btn.closest('.dynamic-list-item').remove(); }); }
+      document.querySelectorAll('.btn-remove').forEach(addRemoveHandler);
+
+      document.getElementById('add-interest').addEventListener('click', () => {
+        const list = document.getElementById('interests-list'); const item = document.createElement('div');
+        item.className = 'dynamic-list-item';
+        item.innerHTML = '<input type="text" name="interest" placeholder="e.g. Machine Learning" maxlength="120" /><button type="button" class="btn-remove" title="Remove">&times;</button>';
+        list.appendChild(item); addRemoveHandler(item.querySelector('.btn-remove')); item.querySelector('input').focus();
+      });
+      document.getElementById('add-education').addEventListener('click', () => {
+        const list = document.getElementById('education-list'); const item = document.createElement('div');
+        item.className = 'edu-row dynamic-list-item';
+        item.innerHTML = '<input type="text" name="edu-course" placeholder="e.g. PhD Physics" maxlength="160" /><div class="edu-row-inner"><input type="text" name="edu-institution" placeholder="Institution" maxlength="160" /><input type="text" name="edu-year" placeholder="Year" maxlength="4" style="max-width:80px" /></div><button type="button" class="btn-remove" title="Remove">&times;</button>';
+        list.appendChild(item); addRemoveHandler(item.querySelector('.btn-remove')); item.querySelector('input').focus();
+      });
+
+      function getInterests() { return [...document.querySelectorAll('#interests-list input[name="interest"]')].map(i => i.value.trim()).filter(Boolean); }
+      function getEducation() { return [...document.querySelectorAll('#education-list .edu-row')].map(r => ({ course: r.querySelector('[name="edu-course"]').value.trim(), institution: r.querySelector('[name="edu-institution"]').value.trim(), year: r.querySelector('[name="edu-year"]').value.trim() })).filter(e => e.course || e.institution); }
+      function getSocialLinks() {
+        const icons = ['envelope','link','x-twitter','github','google-scholar','orcid','researchgate','linkedin'];
+        const names = ['social-envelope','social-link','social-x-twitter','social-github','social-google-scholar','social-orcid','social-researchgate','social-linkedin'];
+        const r = []; for (let i = 0; i < icons.length; i++) { const inp = document.querySelector(`[name="${names[i]}"]`); const v = inp ? inp.value.trim() : ''; if (v) r.push({ icon: icons[i], link: v }); } return r;
+      }
+
+      document.getElementById('profile-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const imageFile = document.getElementById('image').files[0];
+        if (imageFile && imageFile.size > 5 * 1024 * 1024) { setStatus(document.getElementById('status-profile'), 'Image must be 5 MB or smaller.', 'error'); return; }
+        const payload = {
+          name: document.getElementById('name').value.trim(), role: document.getElementById('role').value,
+          affiliation: document.getElementById('affiliation').value.trim(), orgUrl: document.getElementById('org-url').value.trim(),
+          bio: document.getElementById('bio').value.trim(), interests: getInterests(), education: getEducation(),
+          socialLinks: getSocialLinks(), accessKey: document.getElementById('profile-accessKey').value,
+          imageDataUrl: imageFile ? await fileToDataUrl(imageFile) : '',
+        };
+        if (!payload.name || !payload.role || !payload.accessKey) { setStatus(document.getElementById('status-profile'), 'Please fill all required fields.', 'error'); return; }
+        await submitForm(API_BASE + '/submit-profile', payload, document.getElementById('btn-submit-profile'), document.getElementById('status-profile'), e.target, () => profileDrop.dropArea.classList.remove('has-image'));
+      });
+
+      /* ===== BIBLIOGRAPHY ===== */
+      document.getElementById('bib-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const payload = { bibtex: document.getElementById('bib-content').value.trim(), accessKey: document.getElementById('bib-accessKey').value };
+        if (!payload.bibtex || !payload.accessKey) { setStatus(document.getElementById('status-bib'), 'Please fill all required fields.', 'error'); return; }
+        await submitForm(API_BASE + '/submit-bib', payload, document.getElementById('btn-submit-bib'), document.getElementById('status-bib'), e.target);
+      });
+
+      /* ===== NEWS ===== */
+      const newsDrop = setupImageUpload('news-image-drop-area', 'news-image', 'news-image-preview', 'news-image-file-name');
+
+      document.getElementById('news-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const imageFile = document.getElementById('news-image').files[0];
+        if (imageFile && imageFile.size > 5 * 1024 * 1024) { setStatus(document.getElementById('status-news'), 'Image must be 5 MB or smaller.', 'error'); return; }
+        const authorsRaw = document.getElementById('news-authors').value.trim();
+        const tagsRaw = document.getElementById('news-tags').value.trim();
+        const payload = {
+          title: document.getElementById('news-title').value.trim(), summary: document.getElementById('news-summary').value.trim(),
+          content: document.getElementById('news-content').value.trim(),
+          authors: authorsRaw ? authorsRaw.split(',').map(s => s.trim()).filter(Boolean) : [],
+          tags: tagsRaw ? tagsRaw.split(',').map(s => s.trim()).filter(Boolean) : [],
+          accessKey: document.getElementById('news-accessKey').value,
+          imageDataUrl: imageFile ? await fileToDataUrl(imageFile) : '',
+        };
+        if (!payload.title || !payload.content || !payload.accessKey) { setStatus(document.getElementById('status-news'), 'Please fill all required fields.', 'error'); return; }
+        await submitForm(API_BASE + '/submit-news', payload, document.getElementById('btn-submit-news'), document.getElementById('status-news'), e.target, () => newsDrop.dropArea.classList.remove('has-image'));
+      });
+
+      /* ===== OPPORTUNITIES ===== */
+      document.getElementById('job-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const payload = {
+          title: document.getElementById('job-title').value.trim(), description: document.getElementById('job-description').value.trim(),
+          organization: document.getElementById('job-organization').value.trim(), location: document.getElementById('job-location').value.trim(),
+          jobType: document.getElementById('job-type').value, applyUrl: document.getElementById('job-apply-url').value.trim(),
+          deadline: document.getElementById('job-deadline').value,
+          accessKey: document.getElementById('job-accessKey').value,
+        };
+        if (!payload.title || !payload.description || !payload.accessKey) { setStatus(document.getElementById('status-job'), 'Please fill all required fields.', 'error'); return; }
+        await submitForm(API_BASE + '/submit-job', payload, document.getElementById('btn-submit-job'), document.getElementById('status-job'), e.target);
+      });
+    </script>
+  </body>
+</html>
