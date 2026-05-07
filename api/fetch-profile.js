@@ -135,7 +135,7 @@ function decodeEntities(str) {
 }
 
 module.exports = async function handler(req, res) {
-  const allowedOrigin = 'https://mode-demo.github.io';
+  const allowedOrigin = 'https://mode-collaboration.github.io';
   res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');

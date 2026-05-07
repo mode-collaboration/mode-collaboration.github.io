@@ -4,7 +4,7 @@
 
 The easiest way to submit content is via the online form at: 
 
-**https://mode-demo.github.io/submission.html**
+**https://mode-collaboration.github.io/submission.html**
 
 It has four tabs: **Profile**, **Bibliography**, **News**, and **Opportunities**. Each submission creates a draft PR for review.
 
@@ -18,7 +18,7 @@ It has four tabs: **Profile**, **Bibliography**, **News**, and **Opportunities**
 - Your profile picture, renamed as `avatar.jpg`, `avatar.jpeg`, or `avatar.png`
 
 
-**Option 2 (auto):** Use the **Profile** tab at [submission.html](https://mode-demo.github.io/submission.html).
+**Option 2 (auto):** Use the **Profile** tab at [submission.html](https://mode-collaboration.github.io/submission.html).
 
 
 Role ranks: Principal Investigator/Professor (1), Affiliated Researcher (2), PhD Candidate (3), Collaborator (4), B.Sc/Master (5).
@@ -33,7 +33,7 @@ Then push your changes and create a PR. Hamza or Pietro will merge it.
 
 **Option 1 (recommended, manual):** Update the `publications.bib` file in the base directory. The GitHub Actions workflow will auto-generate individual publication pages after merge.
 
-**Option 2 (auto):** Use the **Bibliography** tab at [submission.html](https://mode-demo.github.io/submission.html). Paste your BibTeX entries and they will be appended to `publications.bib`.
+**Option 2 (auto):** Use the **Bibliography** tab at [submission.html](https://mode-collaboration.github.io/submission.html). Paste your BibTeX entries and they will be appended to `publications.bib`.
 ---
 
 ## News
@@ -41,7 +41,7 @@ Then push your changes and create a PR. Hamza or Pietro will merge it.
 
 **Option 1 (recommended, manual):** Fork this repository, create a new folder in `content/post/` with a relevant name (e.g., `sixth-mode-workshop-2026`), and inside that folder create an `index.md` file. Use `content/post/fifth-mode-workshop-2025/index.md` as a template.
 
-**Option 2 (auto):** Use the **News** tab at [submission.html](https://mode-demo.github.io/submission.html).
+**Option 2 (auto):** Use the **News** tab at [submission.html](https://mode-collaboration.github.io/submission.html).
 
 
 The homepage automatically shows the latest 2 news posts. The [News page](/news/) shows all posts.
@@ -55,7 +55,7 @@ Then push your changes and create a PR. Hamza or Pietro will merge it.
 
 **Option 2 (recommended, manual):** Fork this repository, create a new folder in `content/opportunities/` (e.g., `phd-position-cern`), and inside that folder create an `index.md` with frontmatter fields: `title`, `organization`, `location`, `job_type`, `apply_url`, `deadline`, and `tags`.
 
-**Option 1 (auto):** Use the **Opportunities** tab at [submission.html](https://mode-demo.github.io/submission.html).
+**Option 1 (auto):** Use the **Opportunities** tab at [submission.html](https://mode-collaboration.github.io/submission.html).
 
 
 The [Opportunities page](/opportunities/) shows the top 5 positions with deadlines highlighted in bold. If no opportunities exist, it displays a message directing visitors to check back or follow LinkedIn.
