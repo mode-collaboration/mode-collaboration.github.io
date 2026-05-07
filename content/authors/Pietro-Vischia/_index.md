@@ -3,10 +3,10 @@ title: "Pietro Vischia"
 authors:
 - "pietro-vischia"
 superuser: false
-role: "Affiliated Researcher"
-role_rank: 2
+role: "Principal Investigator/Professor"
+role_rank: 1
 organizations:
-- name: "Universidad de Oviedo and ICTEA"
+- name: "Universidad de Oviedo (Department of Physics and ICTEA)"
   url: ""
 bio: ""
 interests: []
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Affiliated Researcher"
+- "Principal Investigator/Professor"
 ---
 
 {style="text-align: justify;"}

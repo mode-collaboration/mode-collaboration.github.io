@@ -3,8 +3,8 @@ title: "Kalina Dimitrova"
 authors:
 - "kalina-dimitrova"
 superuser: false
-role: "PhD Candidate"
-role_rank: 3
+role: "Principal Investigator/Professor"
+role_rank: 1
 organizations:
 - name: "Sofia University"
   url: ""
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "Principal Investigator/Professor"
 ---
 
 {style="text-align: justify;"}

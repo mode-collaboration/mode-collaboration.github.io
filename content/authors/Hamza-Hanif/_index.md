@@ -10,8 +10,8 @@ authors:
 superuser: false
 
 # Role/position
-role: "PhD Candidate"
-role_rank: 3
+role: "Principal Investigator/Professor"
+role_rank: 1
 
 # Organizations/Affiliations
 organizations:
@@ -63,7 +63,7 @@ social:
 highlight_name: true
 
 user_groups:
-- "PhD Candidate"
+- "Principal Investigator/Professor"
 ---
 
 {style="text-align: justify;"}

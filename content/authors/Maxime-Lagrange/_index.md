@@ -3,8 +3,8 @@ title: "Maxime Lagrange"
 authors:
 - "maxime-lagrange"
 superuser: false
-role: "Collaborator"
-role_rank: 6
+role: "Affiliated Researcher"
+role_rank: 2
 organizations:
 - name: "Université catholique de Louvain"
   url: ""
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Collaborator"
+- "Affiliated Researcher"
 ---
 
 {style="text-align: justify;"}

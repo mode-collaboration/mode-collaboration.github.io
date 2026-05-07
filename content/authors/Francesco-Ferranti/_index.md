@@ -3,8 +3,8 @@ title: "Francesco Ferranti"
 authors:
 - "francesco-ferranti"
 superuser: false
-role: "Principal Investigator/Professor"
-role_rank: 1
+role: "Affiliated Researcher"
+role_rank: 2
 organizations:
 - name: "Lulea University of Technology"
   url: ""
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Affiliated Researcher"
 ---
 
 {style="text-align: justify;"}

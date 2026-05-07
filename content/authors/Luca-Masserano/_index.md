@@ -3,8 +3,8 @@ title: "Luca Masserano"
 authors:
 - "luca-masserano"
 superuser: false
-role: "PhD Candidate"
-role_rank: 3
+role: "Affiliated Researcher"
+role_rank: 2
 organizations:
 - name: "Carnegie Mellon University"
   url: ""
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "Affiliated Researcher"
 ---
 
 {style="text-align: justify;"}
