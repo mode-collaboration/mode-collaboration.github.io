@@ -16,11 +16,11 @@ address:
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: "2026-09-01"
-date_end: "2025-09-07"
+date_end: "2026-09-07"
 all_day: true
 
 # Schedule page publish date (NOT talk date).
-# publishDate: '2017-01-01T00:00:00Z'
+publishDate: '2026-05-06'
 
 
 
