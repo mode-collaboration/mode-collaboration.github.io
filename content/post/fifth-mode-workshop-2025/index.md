@@ -3,7 +3,7 @@ title: Fifth MODE Workshop on Differentiable Programming
 summary: The Fifth MODE Workshop took place at OAC (Kolymbari, Crete) with keynote talks by leading researchers.
 date: 2025-03-01
 authors:
-  - admin
+  - Pietro
 tags:
   - workshop
   - event

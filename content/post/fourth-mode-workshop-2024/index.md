@@ -3,7 +3,7 @@ title: Fourth MODE Workshop at IFIC Valencia
 summary: The Fourth MODE Workshop on Differentiable Programming took place at IFIC Valencia.
 date: 2024-03-01
 authors:
-  - admin
+  - Pietro
 tags:
   - workshop
   - event

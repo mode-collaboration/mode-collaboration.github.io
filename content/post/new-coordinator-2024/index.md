@@ -3,7 +3,7 @@ title: New Coordinator and Steering Board Elected
 summary: Prof. Pietro Vischia elected as new MODE coordinator with a renewed Steering Board.
 date: 2024-11-20
 authors:
-  - admin
+  - Pietro
 tags:
   - collaboration
   - governance
