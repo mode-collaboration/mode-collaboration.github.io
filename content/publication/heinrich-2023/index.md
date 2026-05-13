@@ -4,7 +4,7 @@ authors:
 - Lukas Heinrich
 - Michael Kagan
 date: '2023-02-01'
-publishDate: '2026-05-13T22:53:24.433842Z'
+publishDate: '2026-05-13T22:59:15.701150Z'
 publication_types:
 - article-journal
 publication: '*Journal of Physics: Conference Series*'

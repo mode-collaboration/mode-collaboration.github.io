@@ -18,7 +18,7 @@ authors:
 - Luis Recabarren Vergara
 - Alexander Shen
 date: '2025-08-01'
-publishDate: '2026-05-13T22:53:24.421811Z'
+publishDate: '2026-05-13T22:59:15.689361Z'
 publication_types:
 - article-journal
 publication: '*Nuclear Physics B*'

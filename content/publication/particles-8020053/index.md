@@ -10,7 +10,7 @@ authors:
 - Pietro Vischia
 - Haitham Zaraket
 date: '2025-01-01'
-publishDate: '2026-05-13T22:53:24.369585Z'
+publishDate: '2026-05-13T22:59:15.644543Z'
 publication_types:
 - article-journal
 publication: '*Particles*'

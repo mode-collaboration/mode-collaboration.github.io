@@ -6,7 +6,7 @@ authors:
 - Jan Kieseler
 - Paul Lujan
 date: '2022-01-01'
-publishDate: '2026-05-13T22:53:24.439781Z'
+publishDate: '2026-05-13T22:59:15.707230Z'
 publication_types:
 - article-journal
 publication: '*The European Physical Journal C*'

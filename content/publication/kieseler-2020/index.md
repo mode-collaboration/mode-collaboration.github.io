@@ -4,7 +4,7 @@ title: 'Object condensation: one-stage grid-free multi-object reconstruction in 
 authors:
 - Jan Kieseler
 date: '2020-09-01'
-publishDate: '2026-05-13T22:53:24.342297Z'
+publishDate: '2026-05-13T22:59:15.622472Z'
 publication_types:
 - article-journal
 publication: '*The European Physical Journal C*'

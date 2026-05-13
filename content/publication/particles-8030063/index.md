@@ -13,7 +13,7 @@ authors:
 - Volodymyr Svintozelskyi
 - Jiahui Zhuo
 date: '2025-01-01'
-publishDate: '2026-05-13T22:53:24.354806Z'
+publishDate: '2026-05-13T22:59:15.634044Z'
 publication_types:
 - article-journal
 publication: '*Particles*'
