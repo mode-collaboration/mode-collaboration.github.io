@@ -4,7 +4,7 @@ authors:
 - Samuel Escrig
 - Christophe Rappold
 date: '2025-01-01'
-publishDate: '2026-05-13T22:59:15.641314Z'
+publishDate: '2026-05-13T23:02:30.890742Z'
 publication_types:
 - article-journal
 publication: '*Particles*'

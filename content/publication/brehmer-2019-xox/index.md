@@ -6,7 +6,7 @@ authors:
 - Irina Espejo
 - Kyle Cranmer
 date: '2020-01-01'
-publishDate: '2026-05-13T22:59:15.750336Z'
+publishDate: '2026-05-13T23:02:31.137320Z'
 publication_types:
 - article-journal
 publication: '*Comput. Softw. Big Sci.*'

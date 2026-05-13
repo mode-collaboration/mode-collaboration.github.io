@@ -1,0 +1,100 @@
+---
+title: On the Codesign of Scientific Experiments and Industrial Systems
+authors:
+- Tommaso Dorigo
+- Pietro Vischia
+- Shahzaib Abbas
+- Tosin Adewumi
+- Lama Alkhaled
+- Lorenzo Arsini
+- Muhammad Awais
+- Maxim Borisyak
+- András Bóta
+- Florian Bury
+- Sascha Caron
+- James Carzon
+- Long Chen
+- Prakash C. Chhipa
+- Paul Christakopoulos
+- Jacopo De Piccoli
+- Andrea De Vita
+- Zlatan Dimitrov
+- Michele Doro
+- Luigi Favaro
+- Francesco Ferranti
+- Santiago Folgueras
+- Rihab Gargouri
+- Nicolas R. Gauger
+- Andrea Giammanco
+- Christian Glaser
+- Tobias Golling
+- João A. Gonçalves
+- Hui Han
+- Hamza Hanif
+- Lukas Heinrich
+- Yan Chai Hum
+- Florent Imbert
+- Andreas Ipp
+- Michael Kagan
+- Noor Kainat Syeda
+- Rukshak Kapoor
+- Aparup Khatua
+- Eduard J. Kerkhoven
+- Jan Kieseler
+- Tobias Kortus
+- Ashish Kumar Singh
+- Marius S. Köppel
+- Daniel Lanchares
+- Ann Lee
+- Pelayo Leguina
+- Christos Leonidopoulos
+- Giuseppe Levi
+- Boying Li
+- Chang Liu
+- Marcus Liwicki
+- Karl Lowenmark
+- Enrico Lupi
+- Carlo Mancini-Terracciano
+- Dominik Maršík
+- Leonidas Matsakas
+- Hamam Mokayed
+- Federico Nardi
+- Amirhossein Nayebiastaneh
+- Xuan T. Nguyen
+- Aitor Orio
+- Jingjing Pan
+- Jigar Patel
+- Carmelo Pellegrino
+- María Pereira Martínez
+- Karolos Potamianos
+- Shah Rukh Qasim
+- Martin Ravn
+- Luis Recabarren Vergara
+- Humberto Reyes-González
+- Hipolito A. Riveros Guevara
+- Ippocratis D. Saltas
+- Rajkumar Saini
+- Fredrik Sandin
+- Alexander Schilling
+- Kylian Schmidt
+- Nicola Serra
+- Saqib Shahzad
+- Foteini Simistira Liwicki
+- Giles C. Strong
+- Kristian Tchiorniy
+- Mia Tosi
+- Andrey Ustyuzhanin
+- Xabier Cid Vidal
+- Kinga A. Wozniak
+- Mengqing Wu
+- Zahraa Zaher
+date: '2026-01-01'
+publishDate: '2026-05-13T23:02:30.683265Z'
+publication_types:
+- manuscript
+links:
+- name: arXiv
+  url: https://arxiv.org/abs/2603.26613
+- name: URL
+  url: https://arxiv.org/abs/2603.26613
+---

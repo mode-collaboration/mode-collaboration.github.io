@@ -4,7 +4,7 @@ authors:
 - Nathan Simpson
 - Lukas Heinrich
 date: '2023-02-01'
-publishDate: '2026-05-13T22:59:15.698183Z'
+publishDate: '2026-05-13T23:02:31.027018Z'
 publication_types:
 - article-journal
 publication: '*Journal of Physics: Conference Series*'

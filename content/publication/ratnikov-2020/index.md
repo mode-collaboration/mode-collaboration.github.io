@@ -9,7 +9,7 @@ authors:
 - Pavel Fakanov
 - Leonid Matyushin
 date: '2020-01-01'
-publishDate: '2026-05-13T22:59:15.733811Z'
+publishDate: '2026-05-13T23:02:31.106538Z'
 publication_types:
 - article-journal
 publication: '*EPJ Web of Conferences*'

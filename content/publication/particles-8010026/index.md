@@ -5,7 +5,7 @@ authors:
 - Xabier Cid Vidal
 - Pietro Vischia
 date: '2025-01-01'
-publishDate: '2026-05-13T22:59:15.676609Z'
+publishDate: '2026-05-13T23:02:30.971471Z'
 publication_types:
 - article-journal
 publication: '*Particles*'
