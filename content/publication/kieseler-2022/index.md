@@ -7,7 +7,7 @@ authors:
 - Tommaso Dorigo
 - Lukas Layer
 date: '2022-01-01'
-publishDate: '2026-05-13T23:02:31.042383Z'
+publishDate: '2026-05-13T23:18:17.010931Z'
 publication_types:
 - article-journal
 publication: '*The European Physical Journal C*'

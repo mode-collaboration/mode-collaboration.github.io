@@ -6,7 +6,7 @@ authors:
 - Eduardo Cortina Gil
 - Pavel Demin
 date: '2018-12-01'
-publishDate: '2026-05-13T23:02:31.129506Z'
+publishDate: '2026-05-13T23:18:17.042693Z'
 publication_types:
 - article-journal
 publication: '*Philosophical Transactions of the Royal Society A: Mathematical, Physical

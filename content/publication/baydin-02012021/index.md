@@ -19,12 +19,12 @@ authors:
 - Pietro Vischia
 - Hevjin Yarar
 date: '2021-01-01'
-publishDate: '2026-05-13T23:02:31.059099Z'
+publishDate: '2026-05-13T23:18:17.016508Z'
 publication_types:
 - article-journal
 publication: '*Nuclear Physics News*'
 doi: 10.1080/10619127.2021.1881364
 links:
 - name: URL
-  url: '         https://doi.org/10.1080/10619127.2021.1881364'
+  url: https://doi.org/10.1080/10619127.2021.1881364
 ---

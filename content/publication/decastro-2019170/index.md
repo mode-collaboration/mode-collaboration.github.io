@@ -4,7 +4,7 @@ authors:
 - Pablo de Castro
 - Tommaso Dorigo
 date: '2019-01-01'
-publishDate: '2026-05-13T23:02:30.836520Z'
+publishDate: '2026-05-13T23:18:16.926899Z'
 publication_types:
 - article-journal
 publication: '*Computer Physics Communications*'
