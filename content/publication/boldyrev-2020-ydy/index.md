@@ -6,7 +6,7 @@ authors:
 - Fedor Ratnikov
 - Andrey Shevelev
 date: '2020-01-01'
-publishDate: '2026-05-13T23:18:17.036519Z'
+publishDate: '2026-05-13T23:21:31.019175Z'
 publication_types:
 - article-journal
 publication: '*JINST*'

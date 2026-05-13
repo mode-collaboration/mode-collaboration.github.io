@@ -11,7 +11,7 @@ authors:
 - Fredrik Sandin
 - Mia Tosi
 date: '2025-01-01'
-publishDate: '2026-05-13T23:18:16.972159Z'
+publishDate: '2026-05-13T23:21:30.952435Z'
 publication_types:
 - article-journal
 publication: '*Particles*'

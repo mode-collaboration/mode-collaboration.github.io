@@ -6,7 +6,7 @@ authors:
 - Venelin Kozhuharov
 - Peicho Petkov
 date: '2025-01-01'
-publishDate: '2026-05-13T23:18:16.962528Z'
+publishDate: '2026-05-13T23:21:30.942287Z'
 publication_types:
 - article-journal
 publication: '*Particles*'

@@ -1,7 +1,7 @@
 ---
-title: "Zahraa Daher"
+title: "Zahraa Zaher"
 authors:
-- "zahraa-daher"
+- "zahraa-zaher"
 superuser: false
 role: "PhD Candidate"
 role_rank: 3
