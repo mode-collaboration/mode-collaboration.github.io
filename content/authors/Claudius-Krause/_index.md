@@ -15,8 +15,7 @@ interests:
 education:
   courses: []
 social:
-- icon: bluesky
-  icon_pack: fab
+- icon: brands/bluesky
   link: https://bsky.app/profile/claudius-krause.bsky.social
 - icon: link
   icon_pack: fas

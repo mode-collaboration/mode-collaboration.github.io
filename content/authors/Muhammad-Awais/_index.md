@@ -1,12 +1,12 @@
 ---
-title: "Nicolas Gauger"
+title: "Muhammad Awais"
 authors:
-- "nicolas-gauger"
+- "muhammad-awais"
 superuser: false
-role: "Principal Investigator/Professor"
-role_rank: 1
+role: "PhD Candidate"
+role_rank: 3
 organizations:
-- name: "University of Kaiserslautern-Landau"
+- name: "Lulea University of Technology"
   url: ""
 bio: ""
 interests: []
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "PhD Candidate"
 ---
 
 {style="text-align: justify;"}
