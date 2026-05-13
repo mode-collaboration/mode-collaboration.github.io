@@ -1,25 +1,29 @@
 ---
-title: On the utility function of experiments in fundamental science
+title: Toward the end-to-end optimization of the SWGO array layout
 authors:
 - Tommaso Dorigo
-- Michele Doro
 - Max Aehle
+- Cornelia Arcaro
 - Muhammad Awais
+- Fabiola Bergamaschi
+- Julien Donini
+- Michele Doro
 - Nicolas R. Gauger
 - Rafael Izbicki
 - Jan Kieseler
-- Ann B. Lee
+- Ann Lee
 - Luca Masserano
 - Federico Nardi
-- Alexander Shen
+- Raaghav Rajesh
 - Luis Recabarren Vergara
-date: '2025-05-01'
-publishDate: '2026-02-27T15:55:51.446054Z'
+- Alexander Shen
+date: '2025-08-01'
+publishDate: '2026-05-13T22:53:24.421811Z'
 publication_types:
 - article-journal
-publication: '*Physics Open*'
-doi: 10.1016/j.physo.2025.100270
+publication: '*Nuclear Physics B*'
+doi: 10.1016/j.nuclphysb.2025.116934
 links:
 - name: URL
-  url: http://dx.doi.org/10.1016/j.physo.2025.100270
+  url: http://dx.doi.org/10.1016/j.nuclphysb.2025.116934
 ---
