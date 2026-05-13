@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   import-publications:
@@ -32,14 +33,11 @@ jobs:
         run: |
           academic import publications.bib content/publication/ --compact --overwrite
 
-      - name: Commit imported publications
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add content/publication
-          if git diff --cached --quiet; then
-            echo "No publication changes to commit."
-          else
-            git commit -m "Auto-update publications from BibTeX"
-            git push
-          fi
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: Auto-update publications from BibTeX
+          branch: auto-update-publications
+          delete-branch: true
+          title: Auto-update publications from BibTeX
+          body: Automated update of `content/publication` from `publications.bib`.
