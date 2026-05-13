@@ -12,7 +12,7 @@ authors:
 - H. Mugnier
 - C.A. Marin Tobon
 date: '2015-01-01'
-publishDate: '2026-05-13T22:59:15.744189Z'
+publishDate: '2026-05-13T23:02:31.121782Z'
 publication_types:
 - paper-conference
 publication: '*2015 IEEE Nuclear Science Symposium and Medical Imaging Conference

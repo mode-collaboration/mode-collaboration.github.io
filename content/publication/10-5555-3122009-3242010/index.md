@@ -6,7 +6,7 @@ authors:
 - Alexey Andreyevich Radul
 - Jeffrey Mark Siskind
 date: '2017-01-01'
-publishDate: '2026-05-13T22:59:15.713511Z'
+publishDate: '2026-05-13T23:02:31.067698Z'
 publication_types:
 - article-journal
 publication: '*J. Mach. Learn. Res.*'

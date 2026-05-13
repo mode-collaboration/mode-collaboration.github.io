@@ -5,7 +5,7 @@ authors:
 - Johann Brehmer
 - Gilles Louppe
 date: '2020-05-01'
-publishDate: '2026-05-13T22:59:15.724184Z'
+publishDate: '2026-05-13T23:02:31.091303Z'
 publication_types:
 - article-journal
 publication: '*Proceedings of the National Academy of Sciences*'
