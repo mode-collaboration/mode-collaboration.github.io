@@ -3,7 +3,7 @@ title: "Florian Bury"
 authors:
 - "florian-bury"
 superuser: false
-role: "Principal Investigator/Professor"
+role: "Affiliated Researcher"
 role_rank: 1
 organizations:
 - name: "University of Bristol"
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Affiliated Researcher"
 ---
 
 {style="text-align: justify;"}
