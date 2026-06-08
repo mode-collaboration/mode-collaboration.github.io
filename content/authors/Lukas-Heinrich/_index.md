@@ -6,7 +6,7 @@ superuser: false
 role: "Principal Investigator/Professor"
 role_rank: 1
 organizations:
-- name: "TU-München"
+- name: "TU Munich"
   url: ""
 bio: ""
 interests: []
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "TU Munich"
 ---
 
 {style="text-align: justify;"}

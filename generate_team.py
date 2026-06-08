@@ -154,7 +154,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "{role}"
+- "{affiliation}"
 ---
 
 {{style="text-align: justify;"}}

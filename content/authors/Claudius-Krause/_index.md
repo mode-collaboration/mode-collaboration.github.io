@@ -29,7 +29,7 @@ social:
 
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "MBI Vienna (OeAW)"
 ---
 
 {style="text-align: justify;"}

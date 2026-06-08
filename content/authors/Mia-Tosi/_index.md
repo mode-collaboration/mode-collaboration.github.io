@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Affiliated Researcher"
+- "INFN and Università of Padova"
 ---
 
 {style="text-align: justify;"}

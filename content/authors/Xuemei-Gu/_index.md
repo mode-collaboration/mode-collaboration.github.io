@@ -36,7 +36,7 @@ social:
 
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Friedrich Schiller University Jena"
 ---
 
 {style="text-align: justify;"}

@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "IGFAE and Universidad de Santiago de Compostela"
 ---
 
 {style="text-align: justify;"}

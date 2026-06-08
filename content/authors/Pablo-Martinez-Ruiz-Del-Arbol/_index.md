@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Instituto de Física de Cantabria"
 ---
 
 {style="text-align: justify;"}

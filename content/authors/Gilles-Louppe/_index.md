@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Université de Liège"
 ---
 
 {style="text-align: justify;"}

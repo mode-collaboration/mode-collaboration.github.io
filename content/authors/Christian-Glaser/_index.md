@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Uppsala Universitet"
 ---
 
 {style="text-align: justify;"}

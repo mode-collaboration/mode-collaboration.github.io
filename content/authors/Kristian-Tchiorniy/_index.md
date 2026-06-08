@@ -6,7 +6,7 @@ superuser: false
 role: "PhD Candidate"
 role_rank: 3
 organizations:
-- name: "TU-München"
+- name: "TU Munich"
   url: ""
 bio: ""
 interests: []
@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "TU Munich"
 ---
 
 {style="text-align: justify;"}

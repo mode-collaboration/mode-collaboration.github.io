@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Affiliated Researcher"
+- "Higher School of Economics of Moscow"
 ---
 
 {style="text-align: justify;"}

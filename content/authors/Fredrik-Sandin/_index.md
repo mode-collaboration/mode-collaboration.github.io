@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Lulea University of Technology"
 ---
 
 {style="text-align: justify;"}

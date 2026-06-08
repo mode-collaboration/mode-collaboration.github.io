@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "Universidad de Oviedo (Department of Physics and ICTEA)"
 ---
 
 {style="text-align: justify;"}

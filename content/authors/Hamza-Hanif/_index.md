@@ -15,7 +15,7 @@ role_rank: 1
 
 # Organizations/Affiliations
 organizations:
-- name: "Secretary of MODE Collaboration"
+- name: "Simon Fraser University"
   url: ""
 
 bio: ""
@@ -63,7 +63,7 @@ social:
 highlight_name: true
 
 user_groups:
-- "Affiliated Researcher"
+- "Simon Fraser University"
 ---
 
 {style="text-align: justify;"}

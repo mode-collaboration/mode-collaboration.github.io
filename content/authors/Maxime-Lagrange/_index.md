@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Affiliated Researcher"
+- "Université catholique de Louvain"
 ---
 
 {style="text-align: justify;"}

@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "University of Bristol"
 ---
 
 {style="text-align: justify;"}

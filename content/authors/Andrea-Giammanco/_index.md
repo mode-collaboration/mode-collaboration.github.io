@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Université catholique de Louvain"
 ---
 
 {style="text-align: justify;"}

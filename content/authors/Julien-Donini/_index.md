@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Université Clermont Auvergne"
 ---
 
 {style="text-align: justify;"}

@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "FAU Erlangen-Nürnberg"
 ---
 
 {style="text-align: justify;"}

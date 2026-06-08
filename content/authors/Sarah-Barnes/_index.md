@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "DLR Institute for the Protection of Maritime Infrastructures"
 ---
 
 {style="text-align: justify;"}

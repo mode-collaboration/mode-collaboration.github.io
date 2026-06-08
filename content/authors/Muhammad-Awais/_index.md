@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "Lulea University of Technology"
 ---
 
 {style="text-align: justify;"}

@@ -6,7 +6,7 @@ superuser: false
 role: "PhD Candidate"
 role_rank: 3
 organizations:
-- name: "RPTU University Kaiserslautern-Landau"
+- name: "University of Kaiserslautern-Landau"
   url: "https://scicomp.rptu.de/"
 bio: ""
 interests:
@@ -30,7 +30,7 @@ social:
   link: https://orcid.org/0000-0001-8802-3247
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "University of Kaiserslautern-Landau"
 ---
 
 {style="text-align: justify;"}

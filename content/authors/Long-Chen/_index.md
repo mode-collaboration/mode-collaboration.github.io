@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Affiliated Researcher"
+- "University of Kaiserslautern-Landau"
 ---
 
 {style="text-align: justify;"}

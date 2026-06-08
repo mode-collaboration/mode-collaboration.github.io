@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "Université catholique de Louvain"
 ---
 
 {style="text-align: justify;"}

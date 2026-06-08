@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Affiliated Researcher"
+- "Università di Roma Sapienza"
 ---
 
 {style="text-align: justify;"}

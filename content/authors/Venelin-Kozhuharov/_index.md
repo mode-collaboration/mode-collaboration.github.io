@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Affiliated Researcher"
+- "Sofia University"
 ---
 
 {style="text-align: justify;"}

@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Higher School of Economics of Moscow"
 ---
 
 {style="text-align: justify;"}

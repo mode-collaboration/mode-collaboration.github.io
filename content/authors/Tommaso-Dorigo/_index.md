@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "INFN and Università of Padova"
 ---
 
 {style="text-align: justify;"}

@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "PhD Candidate"
+- "University of Kaiserslautern-Landau"
 ---
 
 {style="text-align: justify;"}

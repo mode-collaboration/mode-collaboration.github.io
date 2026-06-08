@@ -27,7 +27,7 @@ email: ""
 highlight_name: false
 
 user_groups:
-- Professors
+- "University of Kaiserslautern-Landau"
 ---
 
 {style="text-align: justify;"}

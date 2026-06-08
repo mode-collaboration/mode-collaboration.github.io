@@ -15,7 +15,7 @@ education:
 social: []
 highlight_name: true
 user_groups:
-- "Principal Investigator/Professor"
+- "Università di Roma Sapienza"
 ---
 
 {style="text-align: justify;"}
