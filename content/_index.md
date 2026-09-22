@@ -34,7 +34,7 @@ sections:
         <div style="text-align:center; font-weight:700;">MAILING LIST</div>
 
 
-        If you are interested in information about MODE (including, but not limited to, the announcement of our yearly workshop and the opening of MODE-related PhD/postdoc positions), or if you want to post such advertisement yourself, you can join our <a href="ttps://e-groups.cern.ch/e-groups/Egroup.do?egroupId=10710684">mode-info mailing list </a>!
+        If you are interested in information about MODE (including, but not limited to, the announcement of our yearly workshop and the opening of MODE-related PhD/postdoc positions), or if you want to post such advertisement yourself, you can join our <a href="https://groups-portal.web.cern.ch/group/mode-collaboration/details">mode-info mailing list </a>!
  
 
   - block: collection
